@@ -1,0 +1,383 @@
+---
+// Hero Convergence - Main hero section with title and convergence visualization
+import ConvergenceVisualization from './ConvergenceVisualization.astro';
+---
+
+<!-- Fixed Header with Logo -->
+<header class="fixed-header" id="fixedHeader">
+  <div class="header-content">
+    <div class="logo">
+      <img src="/assets/mr-logo.svg" alt="MR ROMA Logo" class="logo-svg">
+    </div>
+  </div>
+</header>
+
+<section class="hero-convergence">
+  <div class="container">
+    <h1 class="hero-title">
+      <span class="hero-title-main">MR ROMA</span>
+      <span class="hero-title-subtitle">ALINEAMOS UX, PRODUCTO Y TECNOLOGÍA CON EL NEGOCIO PARA GENERAR UN IMPACTO REAL.</span>
+    </h1>
+    
+    <!-- Convergence Visualization Component -->
+    <ConvergenceVisualization />
+    
+  </div>
+  
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+</section>
+
+<style>
+  /* Fixed Header Styles */
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .fixed-header.visible {
+    transform: translateY(0);
+  }
+
+  .header-content {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-svg {
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  .logo-svg:hover {
+    transform: scale(1.05);
+  }
+
+  /* Remove old logo-text styles since we're using SVG now */
+
+  /* Remove transitions ONLY from hero title elements */
+  .hero-title,
+  .hero-title *,
+  .hero-title-main,
+  .hero-title-subtitle {
+    transition: none !important;
+    animation: none !important;
+    transform-style: flat !important;
+    backface-visibility: hidden !important;
+    perspective: none !important;
+  }
+
+  /* Allow transitions for other elements in hero section */
+  .hero-convergence {
+    min-height: 140vh; /* Reduced from 180vh to fit better on large screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-convergence::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-title {
+    position: absolute !important;
+    top: 30% !important; /* Adjusted from 35% to better fit on screen */
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+    max-width: 90% !important;
+    margin-bottom: 1rem !important;
+    opacity: 0 !important;
+    text-align: center !important;
+  }
+
+  .hero-title.visible {
+    opacity: 1 !important;
+  }
+
+  .hero-title-main {
+    display: block !important;
+    font-size: clamp(2.5rem, 4vw, 3.5rem) !important; /* Reduced from clamp(3rem, 5vw, 4rem) */
+    font-weight: 900 !important;
+    color: #000000 !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.08em !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    opacity: 0 !important;
+  }
+
+  .hero-title-main.visible {
+    opacity: 1 !important;
+  }
+
+  .hero-title-subtitle {
+    display: block !important;
+    font-size: clamp(1rem, 2vw, 1.3rem) !important; /* Reduced from clamp(1.1rem, 2.5vw, 1.5rem) */
+    font-weight: 300 !important;
+    color: #000000 !important;
+    max-width: 700px !important; /* Reduced from 800px */
+    margin: 0 auto !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.02em !important;
+    opacity: 0 !important;
+  }
+
+  .hero-title-subtitle.visible {
+    opacity: 0.8 !important;
+  }
+
+  /* Responsive */
+  @media (min-width: 1400px) {
+    .hero-title-main {
+      font-size: 3.5rem !important; /* Reduced from 8rem */
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-title-subtitle {
+      font-size: 1.3rem !important; /* Reduced from 1.75rem */
+      max-width: 800px !important; /* Reduced from 1000px */
+    }
+  }
+
+  @media (max-width: 1399px) and (min-width: 1024px) {
+    .hero-title-main {
+      font-size: clamp(3rem, 3.5vw, 3.5rem) !important; /* Reduced from clamp(7rem, 4vw, 4rem) */
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-title-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem) !important; /* Reduced from clamp(1.3rem, 2.5vw, 1.5rem) */
+      max-width: 700px !important; /* Reduced from 900px */
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .hero-title-main {
+      font-size: clamp(2.5rem, 4vw, 3rem) !important; /* Reduced from clamp(5rem, 4.5vw, 3.5rem) */
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-title-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.2rem) !important; /* Reduced from clamp(1.2rem, 3vw, 1.4rem) */
+      max-width: 600px !important; /* Reduced from 800px */
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 481px) {
+    .hero-title-main {
+      font-size: clamp(2rem, 4.5vw, 2.5rem) !important; /* Reduced from clamp(4rem, 5vw, 3rem) */
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-title-subtitle {
+      font-size: clamp(0.9rem, 3vw, 1.1rem) !important; /* Reduced from clamp(1.1rem, 3.5vw, 1.3rem) */
+      max-width: 500px !important; /* Reduced from 700px */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-convergence {
+      min-height: 120vh; /* Reduced for mobile */
+    }
+    
+    .hero-title {
+      top: 25% !important; /* Adjusted for mobile */
+    }
+    
+    .hero-title-main {
+      font-size: clamp(1.5rem, 5vw, 2rem) !important; /* Reduced from clamp(2rem, 6vw, 2.5rem) */
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-title-subtitle {
+      font-size: clamp(0.8rem, 3.5vw, 1rem) !important; /* Reduced from clamp(1rem, 4vw, 1.2rem) */
+      max-width: 100% !important;
+    }
+  }
+
+  /* Responsive Header */
+  @media (max-width: 768px) {
+    .fixed-header {
+      padding: 0.75rem 0;
+    }
+    
+    .header-content {
+      padding: 0 1rem;
+    }
+    
+    .logo-svg {
+      width: 50px;
+      height: 34px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .fixed-header {
+      padding: 0.5rem 0;
+    }
+    
+    .logo-svg {
+      width: 45px;
+      height: 30px;
+    }
+  }
+</style>
+
+<script>
+  // Hero Title Animation Controller
+  class HeroAnimationController {
+    private heroTitle: HTMLElement | null;
+    private heroTitleMain: HTMLElement | null;
+    private heroTitleSubtitle: HTMLElement | null;
+    private scrollProgress: HTMLElement | null;
+    private fixedHeader: HTMLElement | null;
+    private textRevealState: 'hidden' | 'revealed' = 'hidden';
+    private headerState: 'hidden' | 'visible' = 'hidden';
+    private scrollHandler: (() => void) | null = null;
+
+    constructor() {
+      this.heroTitle = document.querySelector('.hero-title');
+      this.heroTitleMain = document.querySelector('.hero-title-main');
+      this.heroTitleSubtitle = document.querySelector('.hero-title-subtitle');
+      this.scrollProgress = document.getElementById('scrollProgress');
+      this.fixedHeader = document.getElementById('fixedHeader');
+      
+      this.init();
+    }
+
+    private init(): void {
+      this.initScrollHandler();
+    }
+
+    private initScrollHandler(): void {
+      this.scrollHandler = this.handleScroll.bind(this);
+      let ticking = false;
+      
+      const throttledScrollHandler = () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            this.scrollHandler?.();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      
+      window.addEventListener('scroll', throttledScrollHandler);
+    }
+
+    private handleScroll(): void {
+      const scrollY = window.scrollY;
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (windowHeight > 0) ? (scrollY / windowHeight) * 100 : 0;
+      
+      // Update scroll progress bar
+      if (this.scrollProgress) {
+        this.scrollProgress.style.width = scrollPercent + '%';
+      }
+      
+      // Simple threshold-based text reveal
+      const shouldReveal = scrollY > 120;
+      
+      if (shouldReveal && this.textRevealState === 'hidden') {
+        this.revealText();
+      } else if (!shouldReveal && this.textRevealState === 'revealed') {
+        this.hideText();
+      }
+
+      // Header visibility logic
+      const shouldShowHeader = scrollY > 500; // Show header when title is well out of view
+      
+      if (shouldShowHeader && this.headerState === 'hidden') {
+        this.showHeader();
+      } else if (!shouldShowHeader && this.headerState === 'visible') {
+        this.hideHeader();
+      }
+    }
+
+    private revealText(): void {
+      this.textRevealState = 'revealed';
+      if (this.heroTitle) this.heroTitle.classList.add('visible');
+      if (this.heroTitleMain) this.heroTitleMain.classList.add('visible');
+      if (this.heroTitleSubtitle) this.heroTitleSubtitle.classList.add('visible');
+    }
+
+    private hideText(): void {
+      this.textRevealState = 'hidden';
+      if (this.heroTitle) this.heroTitle.classList.remove('visible');
+      if (this.heroTitleMain) this.heroTitleMain.classList.remove('visible');
+      if (this.heroTitleSubtitle) this.heroTitleSubtitle.classList.remove('visible');
+    }
+
+    private showHeader(): void {
+      this.headerState = 'visible';
+      if (this.fixedHeader) {
+        this.fixedHeader.classList.add('visible');
+      }
+    }
+
+    private hideHeader(): void {
+      this.headerState = 'hidden';
+      if (this.fixedHeader) {
+        this.fixedHeader.classList.remove('visible');
+      }
+    }
+
+    public destroy(): void {
+      if (this.scrollHandler) {
+        window.removeEventListener('scroll', this.scrollHandler);
+        this.scrollHandler = null;
+      }
+      
+      this.heroTitle = null;
+      this.heroTitleMain = null;
+      this.heroTitleSubtitle = null;
+      this.scrollProgress = null;
+      this.fixedHeader = null;
+    }
+  }
+
+  // Initialize when DOM is ready
+  let heroController: HeroAnimationController;
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    heroController = new HeroAnimationController();
+  });
+</script>

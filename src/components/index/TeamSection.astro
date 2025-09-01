@@ -1,0 +1,306 @@
+---
+// Team Section component
+---
+
+<section class="team-section">
+  <div class="container">
+    <h2 class="team-title">NOSOTROS</h2>
+    <div class="team-grid">
+      <div class="team-member" data-member="rob">
+        <div class="member-image">
+          <img src="/assets/images/rob.jpg" alt="Rob" class="member-photo" onerror="this.src='/assets/images/placeholder.jpg'">
+          <div class="member-overlay">
+            <div class="member-contact">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-label">Email</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="member-name">ROB</h3>
+        <p class="member-experience">15 años de experiencia en el desarrollo y liderazgo de equipos de UX, Producto y Tecnología</p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Producto</span>
+          <span class="expertise-tag">Tecnología</span>
+          <span class="expertise-tag">UX/UI</span>
+        </div>
+      </div>
+      
+      <div class="team-member" data-member="manu">
+        <div class="member-image">
+          <img src="/assets/images/manu.jpg" alt="Manu" class="member-photo" onerror="this.src='/assets/images/placeholder.jpg'">
+          <div class="member-overlay">
+            <div class="member-contact">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-label">Email</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="member-name">MANU</h3>
+        <p class="member-experience">25 años de experiencia en la creación de marcas, marketing y diseño creativo</p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Branding</span>
+          <span class="expertise-tag">Diseño</span>
+          <span class="expertise-tag">Marketing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    padding: 6rem 0; /* Further reduced from 8rem */
+    background-color: transparent;
+    position: relative;
+  }
+
+  .team-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .team-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Further reduced from 350px */
+    gap: 3rem; /* Further reduced from 4rem */
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .team-member {
+    text-align: center;
+    transition: transform 0.4s ease;
+  }
+
+  .team-member:hover {
+    transform: translateY(-8px);
+  }
+
+  .member-image {
+    width: 180px; /* Further reduced from 220px */
+    height: 180px; /* Further reduced from 220px */
+    margin: 0 auto 2rem; /* Further reduced from 2.5rem */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #000000; /* Reduced from 4px */
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Reduced from 0 10px 30px */
+  }
+
+  .member-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-color: #333333;
+  }
+
+  .member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .member-image:hover .member-overlay {
+    opacity: 1;
+  }
+
+  .member-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Reduced from 1.5rem */
+  }
+
+  .contact-label {
+    color: #ffffff;
+    font-size: 0.875rem; /* Reduced from 1rem */
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.375rem 0.75rem; /* Reduced from 0.5rem 1rem */
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 2px;
+  }
+
+  .contact-label:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+  }
+
+  .member-name {
+    font-size: 1.75rem; /* Further reduced from 2rem */
+    font-weight: 900;
+    margin-bottom: 1rem; /* Further reduced from 1.25rem */
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+  }
+
+  .member-experience {
+    font-size: 1rem; /* Further reduced from 1.125rem */
+    font-weight: 300;
+    color: #333333;
+    margin-bottom: 1.25rem; /* Further reduced from 1.5rem */
+    line-height: 1.6;
+    max-width: 280px; /* Further reduced from 320px */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .member-expertise {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Reduced from 0.75rem */
+    justify-content: center;
+  }
+
+  .expertise-tag {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem; /* Reduced from 0.75rem 1.5rem */
+    border-radius: 20px; /* Reduced from 25px */
+    font-size: 0.75rem; /* Reduced from 0.875rem */
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  .expertise-tag:hover {
+    background-color: #333333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  /* Responsive */
+  @media (min-width: 1400px) {
+    .team-title {
+      font-size: 3rem; /* Further reduced from 3.5rem */
+      margin-bottom: 3.5rem; /* Further reduced from 4.5rem */
+    }
+  }
+
+  @media (max-width: 1399px) and (min-width: 1024px) {
+    .team-title {
+      font-size: clamp(2rem, 3vw, 3rem); /* Further reduced from clamp(2.5rem, 3.5vw, 3.5rem) */
+      margin-bottom: 3rem; /* Further reduced from 4rem */
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .team-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* Further reduced from clamp(2rem, 4vw, 3rem) */
+      margin-bottom: 2.5rem; /* Further reduced from 3.5rem */
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 481px) {
+    .team-title {
+      font-size: clamp(1.5rem, 4vw, 2rem); /* Further reduced from clamp(1.75rem, 4.5vw, 2.5rem) */
+      margin-bottom: 2.5rem; /* Further reduced from 3rem */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-section {
+      padding: 4rem 0; /* Further reduced from 5rem */
+    }
+    
+    .team-title {
+      font-size: clamp(1.25rem, 4.5vw, 1.75rem); /* Further reduced from clamp(1.5rem, 5vw, 2rem) */
+      margin-bottom: 2.5rem; /* Further reduced from 3rem */
+    }
+    
+    .team-grid {
+      gap: 2rem; /* Further reduced from 2.5rem */
+    }
+    
+    .member-image {
+      width: 140px; /* Further reduced from 160px */
+      height: 140px; /* Further reduced from 160px */
+    }
+    
+    .member-name {
+      font-size: 1.25rem; /* Further reduced from 1.5rem */
+    }
+    
+    .member-experience {
+      font-size: 0.75rem; /* Further reduced from 0.875rem */
+    }
+    
+    .expertise-tag {
+      padding: 0.375rem 0.75rem; /* Further reduced from 0.5rem 1rem */
+      font-size: 0.625rem; /* Further reduced from 0.75rem */
+    }
+  }
+</style>
+
+<script>
+  // Add interactive effects to team members
+  document.addEventListener('DOMContentLoaded', function() {
+    const teamMembers = document.querySelectorAll('.team-member');
+    
+    teamMembers.forEach(member => {
+      member.addEventListener('mouseenter', (event) => {
+        const target = event.currentTarget as HTMLElement;
+        target.style.transform = 'translateY(-8px)';
+      });
+      
+      member.addEventListener('mouseleave', (event) => {
+        const target = event.currentTarget as HTMLElement;
+        target.style.transform = 'translateY(0)';
+      });
+      
+      // Add click effect for member details
+      member.addEventListener('click', (event) => {
+        const target = event.currentTarget as HTMLElement;
+        const memberName = target.dataset.member;
+        console.log(`Ver perfil de: ${memberName}`);
+        // Aquí puedes agregar lógica para mostrar más detalles del miembro
+      });
+    });
+  });
+</script>

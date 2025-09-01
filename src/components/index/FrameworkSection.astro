@@ -1,0 +1,585 @@
+---
+// Framework Section Component - Displays the hierarchical framework diagram
+---
+
+<section class="framework-section">
+  <div class="container">
+    <h2 class="framework-title">NUESTRO FRAMEWORK</h2>
+    
+    <p class="framework-description">
+      Alinear equipos hacia las metas y los OKRs del negocio, para que todo los caminos (iniciativas, proyectos, desarrollos..) lleguen a Roma!
+    </p>
+    
+    <div class="framework-diagram">
+      <!-- Top Level: Business Goal (centered in 3-column grid) -->
+      <div class="level level-1">
+        <div class="grid-spacer"></div>
+        <div class="framework-box business-goal">
+          <span>Meta del Negocio</span>
+        </div>
+        <div class="grid-spacer"></div>
+      </div>
+      
+      <!-- Arrow Level 1: Single arrow pointing down -->
+      <div class="level arrow-level">
+        <div class="grid-spacer"></div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="grid-spacer"></div>
+      </div>
+      
+      <!-- Second Level: Business Line Goals (3 boxes in 3-column grid) -->
+      <div class="level level-2">
+        <div class="framework-box business-line-goal">
+          <span>Meta Línea de Negocio</span>
+        </div>
+        <div class="framework-box business-line-goal">
+          <span>Meta Línea de Negocio</span>
+        </div>
+        <div class="framework-box business-line-goal">
+          <span>Meta Línea de Negocio</span>
+        </div>
+      </div>
+      
+      <!-- Arrow Level 2: 3 arrows pointing down -->
+      <div class="level arrow-level">
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+      </div>
+      
+      <!-- Third Level: Company OKRs (3 boxes in 3-column grid) -->
+      <div class="level level-3">
+        <div class="framework-box company-okr">
+          <span>OKR Empresa</span>
+        </div>
+        <div class="framework-box company-okr">
+          <span>OKR Empresa</span>
+        </div>
+        <div class="framework-box company-okr">
+          <span>OKR Empresa</span>
+        </div>
+      </div>
+      
+      <!-- Arrow Level 3: 3 arrows pointing down -->
+      <div class="level arrow-level">
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+      </div>
+      
+      <!-- Fourth Level: Team OKRs (3 boxes in 3-column grid) -->
+      <div class="level level-4">
+        <div class="framework-box team-okr">
+          <span>OKR Equipo</span>
+        </div>
+        <div class="framework-box team-okr">
+          <span>OKR Equipo</span>
+        </div>
+        <div class="framework-box team-okr">
+          <span>OKR Equipo</span>
+        </div>
+      </div>
+      
+      <!-- Arrow Level 4: 3 arrows pointing down -->
+      <div class="level arrow-level">
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+        <div class="arrow-container">
+          <div class="arrow-down"></div>
+        </div>
+      </div>
+      
+      <!-- Fifth Level: Team Initiatives (3 boxes in 3-column grid) -->
+      <div class="level level-5">
+        <div class="framework-box team-initiative">
+          <span>Iniciativas del Equipo</span>
+        </div>
+        <div class="framework-box team-initiative">
+          <span>Iniciativas del Equipo</span>
+        </div>
+        <div class="framework-box team-initiative">
+          <span>Iniciativas del Equipo</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call to Action Section -->
+    <div class="framework-cta">
+      <p class="cta-text">
+        Conoce qué tan alineados están tus equipos con tus objetivos de negocio.
+      </p>
+      <button class="cta-button" onclick="window.location.href='/evaluacion'">
+        <span class="button-text">Realizar evaluación</span>
+        <span class="button-arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .framework-section {
+    padding: 4rem 0; /* Further reduced from 6rem */
+    background: transparent;
+    position: relative;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .framework-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #000000;
+    letter-spacing: -0.08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .framework-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #000000;
+    letter-spacing: 0.02em;
+  }
+
+  .framework-diagram {
+    position: relative;
+    max-width: 700px; /* Further reduced from 900px */
+    margin: 0 auto;
+    padding: 1rem 0; /* Further reduced from 1.5rem */
+  }
+
+  .level {
+    display: grid;
+    grid-template-columns: 120px 120px 120px; /* Further reduced from 160px 160px 160px */
+    gap: 1rem; /* Further reduced from 1.5rem */
+    margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .level-1 {
+    margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
+    grid-template-columns: 120px 120px 120px; /* Further reduced from 160px 160px 160px */
+  }
+
+  .level-1 .framework-box {
+    grid-column: 2;
+  }
+
+  .level-2 {
+    margin-bottom: 1rem;
+  }
+
+  .level-3 {
+    margin-bottom: 1rem;
+  }
+
+  .level-4 {
+    margin-bottom: 1rem;
+  }
+
+  .level-5 {
+    margin-bottom: 0;
+  }
+
+  .arrow-level {
+    margin-bottom: 1rem;
+    min-height: 20px;
+  }
+
+  .arrow-level.level-1 {
+    grid-template-columns: 200px 200px 200px;
+  }
+
+  .arrow-level.level-1 .arrow-container {
+    grid-column: 2;
+  }
+
+  .grid-spacer {
+    /* Empty space for grid alignment */
+  }
+
+  .arrow-container {
+    height: 12px; /* Further reduced from 15px */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 120px; /* Further reduced from 160px */
+    margin: 0 auto;
+  }
+
+  .framework-box {
+    background: white;
+    border: 2px solid #000;
+    border-radius: 8px; /* Reduced from 12px */
+    padding: 0.5rem; /* Further reduced from 0.75rem */
+    text-align: center;
+    font-weight: 600;
+    font-size: clamp(0.65rem, 1.5vw, 0.75rem); /* Further reduced from clamp(0.75rem, 1.8vw, 0.875rem) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced from 0 4px 6px */
+    width: 120px; /* Further reduced from 160px */
+    height: 45px; /* Further reduced from 60px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+
+  .framework-box.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .framework-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .framework-box span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* Only the business goal box is different (black background, white text) */
+  .business-goal {
+    background: #000000;
+  }
+
+  .business-goal span {
+    color: #ffffff;
+  }
+
+  /* Arrow styles */
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent; /* Further reduced from 8px */
+    border-right: 6px solid transparent; /* Further reduced from 8px */
+    border-top: 10px solid #333; /* Further reduced from 12px */
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(12px); /* Further reduced from 15px */
+    transition: all 0.3s ease;
+  }
+
+  .arrow-down.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Call to Action Section */
+  .framework-cta {
+    text-align: center;
+    margin-top: 2.5rem; /* Further reduced from 4rem */
+    padding: 1.5rem 0; /* Further reduced from 2rem */
+  }
+
+  .cta-text {
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Further reduced from clamp(1.1rem, 2.5vw, 1.5rem) */
+    font-weight: 300;
+    color: #000000;
+    max-width: 600px; /* Further reduced from 800px */
+    margin: 0 auto 1.5rem; /* Further reduced from 2rem */
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 1.25rem 2.5rem; /* Reduced from 1.5rem 3rem */
+    font-size: 1rem; /* Reduced from 1.125rem */
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+    min-width: 180px; /* Reduced from 200px */
+    justify-content: center;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .cta-button:hover::before {
+    left: 100%;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .cta-button:hover .button-arrow {
+    transform: translateX(5px);
+  }
+
+  .button-arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.25rem;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 1400px) {
+    .framework-title {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .framework-description {
+      font-size: 1.3rem;
+      max-width: 700px;
+    }
+  }
+
+  @media (max-width: 1399px) and (min-width: 1024px) {
+    .framework-title {
+      font-size: clamp(2rem, 3vw, 3rem); /* Further reduced from clamp(2.5rem, 3.5vw, 3.5rem) */
+      margin-bottom: 1.5rem; /* Further reduced from 2rem */
+    }
+    
+    .framework-description {
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Further reduced from clamp(1rem, 2vw, 1.3rem) */
+      max-width: 600px; /* Further reduced from 700px */
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .framework-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* Further reduced from clamp(2rem, 4vw, 3rem) */
+      margin-bottom: 1rem; /* Further reduced from 1.5rem */
+    }
+    
+    .framework-description {
+      font-size: clamp(0.8rem, 2vw, 1rem); /* Further reduced from clamp(0.9rem, 2.5vw, 1.2rem) */
+      max-width: 500px; /* Further reduced from 600px */
+    }
+    
+    .level {
+      gap: 1.5rem; /* Further reduced from 2rem */
+      margin-bottom: 2rem; /* Further reduced from 3rem */
+    }
+    
+    .framework-box {
+      padding: 0.5rem 0.75rem; /* Further reduced from 0.75rem 1rem */
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 481px) {
+    .framework-title {
+      font-size: clamp(1.5rem, 4vw, 2rem); /* Further reduced from clamp(1.75rem, 4.5vw, 2.5rem) */
+      margin-bottom: 1rem; /* Further reduced from 1.5rem */
+    }
+    
+    .framework-description {
+      font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* Further reduced from clamp(0.8rem, 3vw, 1.1rem) */
+      max-width: 450px; /* Further reduced from 500px */
+    }
+    
+    .level {
+      flex-direction: column;
+      gap: 1rem; /* Further reduced from 1.5rem */
+      margin-bottom: 2rem; /* Further reduced from 3rem */
+    }
+    
+    .framework-box {
+      padding: 0.5rem 0.75rem; /* Further reduced from 0.75rem 1rem */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .framework-section {
+      padding: 3rem 0; /* Further reduced from 4rem */
+    }
+    
+    .framework-title {
+      font-size: clamp(1.25rem, 4.5vw, 1.75rem); /* Further reduced from clamp(1.5rem, 5vw, 2rem) */
+      margin-bottom: 0.75rem; /* Further reduced from 1rem */
+    }
+    
+    .framework-description {
+      font-size: clamp(0.6rem, 3vw, 0.8rem); /* Further reduced from clamp(0.7rem, 3.5vw, 1rem) */
+      max-width: 100%;
+      margin-bottom: 1.5rem; /* Further reduced from 2rem */
+    }
+    
+    .level {
+      flex-direction: column;
+      gap: 1rem; /* Further reduced from 1.5rem */
+      margin-bottom: 2rem; /* Further reduced from 3rem */
+    }
+    
+    .framework-box {
+      padding: 0.375rem 0.75rem; /* Further reduced from 0.5rem 1rem */
+    }
+    
+    .framework-box span {
+      font-size: 0.6rem; /* Further reduced from 0.7rem */
+    }
+  }
+</style>
+
+<script>
+  // Framework Section Animation Controller
+  class FrameworkAnimationController {
+    private frameworkSection: HTMLElement | null;
+    private frameworkBoxes: NodeListOf<Element>;
+    private frameworkArrows: NodeListOf<Element>;
+    private scrollHandler: (() => void) | null = null;
+
+    constructor() {
+      this.frameworkSection = document.querySelector('.framework-section');
+      this.frameworkBoxes = document.querySelectorAll('.framework-box');
+      this.frameworkArrows = document.querySelectorAll('.arrow-down');
+      this.init();
+    }
+
+    private init(): void {
+      this.initScrollHandler();
+      this.animateOnScroll();
+    }
+
+    private initScrollHandler(): void {
+      this.scrollHandler = this.handleScroll.bind(this);
+      let ticking = false;
+      
+      const throttledScrollHandler = () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            this.scrollHandler?.();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      
+      window.addEventListener('scroll', throttledScrollHandler);
+    }
+
+    private handleScroll(): void {
+      if (!this.frameworkSection) return;
+      
+      const rect = this.frameworkSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      // Always animate when section is visible, regardless of scroll direction
+      if (isVisible) {
+        this.animateOnScroll();
+      } else {
+        // Reset all boxes when section is not visible
+        this.frameworkBoxes.forEach(box => {
+          box.classList.remove('animate-in');
+        });
+        // Reset all arrows when section is not visible
+        this.frameworkArrows.forEach(arrow => {
+          arrow.classList.remove('animate-in');
+        });
+      }
+    }
+
+    private animateOnScroll(): void {
+      // Animate boxes
+      this.frameworkBoxes.forEach((box, index) => {
+        const rect = box.getBoundingClientRect();
+        // More sensitive threshold for better scroll detection
+        const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1;
+        
+        if (isVisible) {
+          // Add animation class
+          setTimeout(() => {
+            box.classList.add('animate-in');
+          }, index * 100);
+        } else {
+          // Remove animation class when not visible
+          box.classList.remove('animate-in');
+        }
+      });
+
+      // Animate arrows
+      this.frameworkArrows.forEach((arrow, index) => {
+        const rect = arrow.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1;
+        
+        if (isVisible) {
+          // Add animation class with slight delay after boxes
+          setTimeout(() => {
+            arrow.classList.add('animate-in');
+          }, (index * 100) + 200);
+        } else {
+          // Remove animation class when not visible
+          arrow.classList.remove('animate-in');
+        }
+      });
+    }
+
+    public destroy(): void {
+      if (this.scrollHandler) {
+        window.removeEventListener('scroll', this.scrollHandler);
+        this.scrollHandler = null;
+      }
+      
+      this.frameworkSection = null;
+      this.frameworkBoxes = document.querySelectorAll('');
+    }
+  }
+
+  // Initialize when DOM is ready
+  let frameworkController: FrameworkAnimationController;
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    frameworkController = new FrameworkAnimationController();
+  });
+</script>

@@ -1,0 +1,339 @@
+---
+// Vision Section Component - Displays the company vision with interconnected triangles
+---
+
+<section class="vision-section">
+  <div class="container">
+    <h2 class="vision-title">Nuestra Visión</h2>
+    
+    <p class="vision-description">
+      Formar equipos que entiendan el negocio y sus objetivos para desarrollar un ecosistema y capacidad sobre las cuales avanzar hacia ROMA
+    </p>
+    
+    <div class="vision-diagram">
+      <!-- Top Row: Single triangle pointing up -->
+      <div class="vision-row top-row">
+        <div class="shape-container">
+          <div class="triangle triangle-up business-triangle"></div>
+          <div class="shape-text business-text">
+            <div class="text-category">NEGOCIO</div>
+            <div class="text-action">Definir</div>
+            <div class="text-goal">Roma</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Row: Three triangles -->
+      <div class="vision-row bottom-row">
+        <div class="shape-container">
+          <div class="triangle triangle-up ux-triangle"></div>
+          <div class="shape-text ux-text">
+            <div class="text-category">UX</div>
+            <div class="text-action">Construir</div>
+            <div class="text-goal">ecosistemas</div>
+          </div>
+        </div>
+        
+        <div class="shape-container">
+          <div class="triangle triangle-down product-triangle"></div>
+          <div class="shape-text product-text">
+            <div class="text-category">PRODUCTO</div>
+            <div class="text-action">Impactar los</div>
+            <div class="text-goal">objetivos</div>
+          </div>
+        </div>
+        
+        <div class="shape-container">
+          <div class="triangle triangle-up tech-triangle"></div>
+          <div class="shape-text tech-text">
+            <div class="text-category">TECH</div>
+            <div class="text-action">Desarrollar</div>
+            <div class="text-goal">capacidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .vision-section {
+    padding: 6rem 0; /* Reduced from 8rem */
+    background: transparent;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .vision-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    letter-spacing: -0.08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .vision-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #000000;
+    letter-spacing: 0.02em;
+  }
+
+  .vision-diagram {
+    position: relative;
+    max-width: 70%; /* Reduced from 80% */
+    margin: 0 auto;
+    padding: 1.5rem 0; /* Reduced from 2rem */
+    overflow: visible;
+  }
+
+  .vision-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top-row {
+    margin-bottom: 10px;
+  }
+
+  .shape-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -45px; /* Reduced from -55px */
+  }
+
+  .triangle {
+    width: 180px; /* Further reduced for better fit */
+    height: 156px; /* Further reduced for better fit */
+    background-color: black;
+    position: relative;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .triangle.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .triangle-up {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .triangle-down {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  }
+
+  .shape-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .product-text {
+    top: 40%;
+  }
+
+  .text-category {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+  }
+
+  .text-action {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.1rem;
+  }
+
+  .text-goal {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #ffffff;
+  }
+
+  /* Responsive */
+  @media (min-width: 1400px) {
+    .vision-title {
+      font-size: 3.5rem; /* Reduced from 4rem */
+      margin-bottom: 1.5rem;
+    }
+    
+    .vision-description {
+      font-size: 1.3rem; /* Reduced from 1.5rem */
+      max-width: 800px; /* Reduced from 1000px */
+    }
+  }
+
+  @media (max-width: 1399px) and (min-width: 1024px) {
+    .vision-title {
+      font-size: clamp(2.5rem, 3.5vw, 3.5rem); /* Reduced from clamp(3rem, 4vw, 4rem) */
+      margin-bottom: 1.5rem;
+    }
+    
+    .vision-description {
+      font-size: clamp(1rem, 2vw, 1.3rem); /* Reduced from clamp(1.1rem, 2.5vw, 1.5rem) */
+      max-width: 700px; /* Reduced from 900px */
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .vision-title {
+      font-size: clamp(2rem, 4vw, 3rem); /* Reduced from clamp(2.5rem, 4.5vw, 3.5rem) */
+      margin-bottom: 1.5rem;
+    }
+    
+    .vision-description {
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Reduced from clamp(1rem, 3vw, 1.4rem) */
+      max-width: 600px; /* Reduced from 800px */
+    }
+    
+    .triangle {
+      width: 180px; /* Reduced for medium screens */
+      height: 156px; /* Reduced for medium screens */
+    }
+    
+    .shape-container {
+      margin: 0 -40px; /* Reduced for medium screens */
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 481px) {
+    .vision-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.5rem); /* Reduced from clamp(2rem, 5vw, 3rem) */
+      margin-bottom: 1.5rem;
+    }
+    
+    .vision-description {
+      font-size: clamp(0.8rem, 3vw, 1.1rem); /* Reduced from clamp(1rem, 3.5vw, 1.3rem) */
+      max-width: 500px; /* Reduced from 700px */
+    }
+    
+    .triangle {
+      width: 160px; /* Reduced for small screens */
+      height: 139px; /* Reduced for small screens */
+    }
+    
+    .shape-container {
+      margin: 0 -35px; /* Reduced for small screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .vision-section {
+      padding: 4rem 0; /* Reduced from 6rem */
+    }
+    
+    .vision-title {
+      font-size: clamp(1.5rem, 5vw, 2rem); /* Reduced from clamp(1.75rem, 6vw, 2.5rem) */
+      margin-bottom: 1rem; /* Reduced from 1.5rem */
+    }
+    
+    .vision-description {
+      font-size: clamp(0.7rem, 3.5vw, 1rem); /* Reduced from clamp(1rem, 4vw, 1.2rem) */
+      max-width: 100%;
+      margin-bottom: 2rem; /* Reduced from 3rem */
+    }
+    
+    .triangle {
+      width: 140px; /* Reduced for mobile */
+      height: 121px; /* Reduced for mobile */
+    }
+    
+    .shape-container {
+      margin: 0 -30px; /* Reduced for mobile */
+    }
+  }
+</style>
+
+<script>
+  class TriangleAnimationController {
+    private triangles: NodeListOf<Element>;
+    private observer!: IntersectionObserver;
+
+    constructor() {
+      this.triangles = document.querySelectorAll('.triangle');
+      this.initIntersectionObserver();
+    }
+
+    private initIntersectionObserver(): void {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.animateTriangle(entry.target as HTMLElement);
+            } else {
+              this.resetTriangle(entry.target as HTMLElement);
+            }
+          });
+        },
+        {
+          threshold: 0.3,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      this.triangles.forEach((triangle) => {
+        this.observer.observe(triangle);
+      });
+    }
+
+    private animateTriangle(triangle: HTMLElement): void {
+      // Remove any existing delay classes
+      triangle.classList.remove('visible-delay-1', 'visible-delay-2');
+      
+      // Apply specific delays based on triangle type
+      if (triangle.classList.contains('product-triangle')) {
+        // Product triangle appears first (no delay)
+        triangle.classList.add('visible');
+      } else if (triangle.classList.contains('ux-triangle') || triangle.classList.contains('tech-triangle')) {
+        // UX and Tech triangles appear with delay
+        setTimeout(() => {
+          triangle.classList.add('visible');
+        }, 300); // 300ms delay
+      } else {
+        // Business triangle (no delay)
+        triangle.classList.add('visible');
+      }
+    }
+
+    private resetTriangle(triangle: HTMLElement): void {
+      triangle.classList.remove('visible');
+    }
+
+    public destroy(): void {
+      if (this.observer) {
+        this.observer.disconnect();
+      }
+    }
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    new TriangleAnimationController();
+  });
+</script>

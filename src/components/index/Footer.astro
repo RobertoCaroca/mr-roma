@@ -1,0 +1,283 @@
+---
+// Footer Component - Compact footer with contact and company information
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Company Info -->
+      <div class="footer-section company-info">
+        <div class="footer-logo">
+          <img src="/assets/mr-logo.svg" alt="MR ROMA Logo" class="footer-logo-svg">
+        </div>
+        <p class="company-description">
+          Alineamos UX, Producto y Tecnología con el Negocio para generar un impacto real.
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section contact-info">
+        <h3 class="footer-title">CONTACTO</h3>
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <span class="contact-text">hola@mrroma.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span class="contact-text">+56 9 XXXX XXXX</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span class="contact-text">Santiago, Chile</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section services">
+        <h3 class="footer-title">SERVICIOS</h3>
+        <ul class="services-list">
+          <li><a href="#talleres" class="service-link">Talleres</a></li>
+          <li><a href="#mentorias" class="service-link">Mentorías</a></li>
+          <li><a href="#asesorias" class="service-link">Asesorías</a></li>
+          <li><a href="#lanzamientos" class="service-link">Lanzamientos</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer-section social">
+        <h3 class="footer-title">SÍGUENOS</h3>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <span class="social-icon">🔗</span>
+            <span class="social-text">LinkedIn</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <span class="social-icon">🐦</span>
+            <span class="social-text">Twitter</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2024 MR ROMA. Todos los derechos reservados.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="/privacidad" class="footer-link">Privacidad</a>
+          <a href="/terminos" class="footer-link">Términos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4rem 0 2rem;
+    position: relative;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo-svg {
+    width: 80px;
+    height: 54px;
+    filter: brightness(0) invert(1);
+  }
+
+  .company-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #cccccc;
+    max-width: 280px;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-icon {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  .contact-text {
+    font-size: 0.875rem;
+    color: #cccccc;
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .services-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .service-link {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+  }
+
+  .service-link:hover {
+    color: #ffffff;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-link:hover {
+    color: #ffffff;
+  }
+
+  .social-icon {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333333;
+    padding-top: 2rem;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    color: #999999;
+    margin: 0;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-link {
+    color: #999999;
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #ffffff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .footer-bottom-links {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer {
+      padding: 2rem 0 1rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .footer-content {
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+    }
+
+    .company-description {
+      font-size: 0.8rem;
+    }
+
+    .contact-text,
+    .service-link,
+    .social-link {
+      font-size: 0.8rem;
+    }
+
+    .footer-title {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>

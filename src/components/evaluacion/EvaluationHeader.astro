@@ -1,0 +1,138 @@
+---
+// Evaluation Header Component
+---
+
+<header class="evaluation-header">
+  <div class="header-content">
+    <h1 class="header-title">MR ROMA Evaluación</h1>
+    <p class="header-subtitle">Alineamos UX, Producto y Tecnología con el Negocio para generar un impacto real</p>
+    
+    <div class="privacy-notice">
+      <p class="privacy-text">Los datos a compartir son encriptados de forma que nadie en MR Roma puede tener acceso a ellos, por lo mismo el siguiente cuestionario no realiza preguntas sobre la identidad de su empresa con el objetivo de mantener la confidencialidad</p>
+    </div>
+  </div>
+</header>
+
+<style>
+  .evaluation-header {
+    background: transparent;
+    padding: 4rem 0 3rem 0;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 3rem;
+  }
+
+  .header-content {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .header-title {
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    line-height: 1.1;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+  }
+
+  .header-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: #000000;
+    line-height: 1.4;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .privacy-notice {
+    background: transparent;
+    border-left: 3px solid #000000;
+    padding: 1.5rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .privacy-text {
+    font-size: 0.95rem;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 1400px) {
+    .header-title {
+      font-size: 4.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .header-subtitle {
+      font-size: 1.75rem;
+      max-width: 1000px;
+    }
+  }
+
+  @media (max-width: 1399px) and (min-width: 1024px) {
+    .header-title {
+      font-size: clamp(3.5rem, 4vw, 4rem);
+      margin-bottom: 2rem;
+    }
+    
+    .header-subtitle {
+      font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+      max-width: 900px;
+    }
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .header-title {
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+      margin-bottom: 2rem;
+    }
+    
+    .header-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      max-width: 800px;
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 481px) {
+    .header-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    .header-subtitle {
+      font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+      max-width: 700px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .evaluation-header {
+      padding: 2.5rem 0 1.5rem 0;
+    }
+    
+    .header-content {
+      padding: 0 1rem;
+    }
+    
+    .header-title {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    .header-subtitle {
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      max-width: 100%;
+    }
+    
+    .privacy-notice {
+      padding: 1.25rem;
+    }
+  }
+</style>
