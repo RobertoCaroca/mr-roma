@@ -314,6 +314,15 @@
     animation: none !important;
   }
 
+  /* Mobile: Keep full size during convergence */
+  @media (max-width: 768px) {
+    .ux-sphere.converging,
+    .product-sphere.converging,
+    .tech-sphere.converging {
+      transform: translate(-50%, -50%) scale(0.8) !important;
+    }
+  }
+
   /* Stop ring spinning during convergence */
   .convergence-visualization.converging .ring-1,
   .convergence-visualization.converging .ring-2,
@@ -485,15 +494,15 @@
     }
     
     .business-sphere {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
     }
     
     .ux-sphere,
     .product-sphere,
     .tech-sphere {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
     }
     
     .ring-1 {
@@ -522,33 +531,33 @@
     
     /* Mobile orbital animations */
     @keyframes orbit-ux {
-      0% { transform: translate(-50%, -50%) rotate(120deg) translateX(120px) rotate(-120deg); }
-      100% { transform: translate(-50%, -50%) rotate(480deg) translateX(120px) rotate(-480deg); }
+      0% { transform: translate(-50%, -50%) rotate(120deg) translateX(160px) rotate(-120deg); }
+      100% { transform: translate(-50%, -50%) rotate(480deg) translateX(160px) rotate(-480deg); }
     }
     @keyframes orbit-product {
-      0% { transform: translate(-50%, -50%) rotate(240deg) translateX(160px) rotate(-240deg); }
-      100% { transform: translate(-50%, -50%) rotate(600deg) translateX(160px) rotate(-600deg); }
+      0% { transform: translate(-50%, -50%) rotate(240deg) translateX(200px) rotate(-240deg); }
+      100% { transform: translate(-50%, -50%) rotate(600deg) translateX(200px) rotate(-600deg); }
     }
     @keyframes orbit-tech {
-      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(-360deg) translateX(140px) rotate(360deg); }
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(-360deg) translateX(180px) rotate(360deg); }
     }
   }
 
   @media (max-width: 480px) {
     .hero-convergence {
-      min-height: 150vh;
+      min-height: 130vh;
     }
     
     .convergence-visualization {
       width: 400px;
       height: 400px;
-      top: 30%; /* Adjusted for small mobile */
+      top: 35%; /* Adjusted for small mobile */
     }
     
     .convergence-title {
       width: 80%;
-      top: -50px; /* Adjust positioning for small mobile */
+      top: -100px; /* Adjust positioning for small mobile */
     }
     
     .convergence-title-main {
@@ -563,16 +572,16 @@
     }
     
     .business-sphere {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       font-size: 0.7rem;
     }
     
     .ux-sphere,
     .product-sphere,
     .tech-sphere {
-      width: 80px;
-      height: 80px;
+      width: 85px;
+      height: 85px;
       border-width: 2px;
     }
     
@@ -606,16 +615,16 @@
     
     /* Small mobile orbital animations */
     @keyframes orbit-ux {
-      0% { transform: translate(-50%, -50%) rotate(120deg) translateX(100px) rotate(-120deg); }
-      100% { transform: translate(-50%, -50%) rotate(480deg) translateX(100px) rotate(-480deg); }
+      0% { transform: translate(-50%, -50%) rotate(120deg) translateX(140px) rotate(-120deg); }
+      100% { transform: translate(-50%, -50%) rotate(480deg) translateX(140px) rotate(-480deg); }
     }
     @keyframes orbit-product {
-      0% { transform: translate(-50%, -50%) rotate(240deg) translateX(130px) rotate(-240deg); }
-      100% { transform: translate(-50%, -50%) rotate(600deg) translateX(130px) rotate(-600deg); }
+      0% { transform: translate(-50%, -50%) rotate(240deg) translateX(170px) rotate(-240deg); }
+      100% { transform: translate(-50%, -50%) rotate(600deg) translateX(170px) rotate(-600deg); }
     }
     @keyframes orbit-tech {
-      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(115px) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(-360deg) translateX(115px) rotate(360deg); }
+      0% { transform: translate(-50%, -50%) rotate(0deg) translateX(155px) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(-360deg) translateX(155px) rotate(360deg); }
     }
   }
 
@@ -726,7 +735,7 @@
       const isSmallMobile = window.innerWidth <= 480;
       
       const initialTop = isSmallMobile ? 15 : isMobile ? 18 : 20;
-      const finalTop = isSmallMobile ? 80 : isMobile ? 100 : 120;
+      const finalTop = isSmallMobile ? 65 : isMobile ? 100 : 120;
       const scrollRange = isSmallMobile ? 300 : isMobile ? 400 : 500;
       const titleRevealThreshold = isSmallMobile ? 120 : isMobile ? 150 : 200;
       
@@ -889,7 +898,7 @@
       if (!this.businessSphereText) return;
       
       this.businessSphereText.style.opacity = '0';
-      this.businessSphereText.style.transform = 'scale(0.8)';
+      this.businessSphereText.style.transform = 'scale(0.9)';
       
       setTimeout(() => {
         if (this.businessSphereText) {
@@ -946,6 +955,9 @@
         { element: this.techSphere, top: '88%' }
       ];
 
+      const isMobile = window.innerWidth <= 768;
+      const scaleValue = isMobile ? '0.85' : '0.7';
+
       spheres.forEach(({ element, top }) => {
         if (!element) return;
         
@@ -953,7 +965,7 @@
           element.classList.add('converging');
           element.style.top = top;
           element.style.left = '53%';
-          element.style.transform = 'translate(-50%, -50%) scale(0.7)';
+          element.style.transform = `translate(-50%, -50%) scale(${scaleValue})`;
         } else {
           element.classList.remove('converging');
           element.style.top = '50%';
