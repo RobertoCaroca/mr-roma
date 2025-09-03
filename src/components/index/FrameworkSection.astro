@@ -4,10 +4,10 @@
 
 <section class="framework-section">
   <div class="container">
-    <h2 class="framework-title">NUESTRO FRAMEWORK</h2>
     
+    <h2 class="framework-title">FRAMEWORK</h2>
     <p class="framework-description">
-      Alinear equipos hacia las metas y los OKRs del negocio, para que todo los caminos (iniciativas, proyectos, desarrollos..) lleguen a Roma!
+      Planteamos estrategias desde el negocio hacia a los que equipos...para que todos lleguen a Roma!
     </p>
     
     <div class="framework-diagram">
@@ -15,7 +15,7 @@
       <div class="level level-1">
         <div class="grid-spacer"></div>
         <div class="framework-box business-goal">
-          <span>Meta del Negocio</span>
+          <span>Negocio</span>
         </div>
         <div class="grid-spacer"></div>
       </div>
@@ -32,13 +32,13 @@
       <!-- Second Level: Business Line Goals (3 boxes in 3-column grid) -->
       <div class="level level-2">
         <div class="framework-box business-line-goal">
-          <span>Meta Línea de Negocio</span>
+          <span>Metas del Negocio</span>
         </div>
         <div class="framework-box business-line-goal">
-          <span>Meta Línea de Negocio</span>
+          <span>Metas del Negocio</span>
         </div>
         <div class="framework-box business-line-goal">
-          <span>Meta Línea de Negocio</span>
+          <span>Metas del Negocio</span>
         </div>
       </div>
       
@@ -58,13 +58,13 @@
       <!-- Third Level: Company OKRs (3 boxes in 3-column grid) -->
       <div class="level level-3">
         <div class="framework-box company-okr">
-          <span>OKR Empresa</span>
+          <span>OKR del Negocio</span>
         </div>
         <div class="framework-box company-okr">
-          <span>OKR Empresa</span>
+          <span>OKR del Negocio</span>
         </div>
         <div class="framework-box company-okr">
-          <span>OKR Empresa</span>
+          <span>OKR del Negocio</span>
         </div>
       </div>
       
@@ -124,7 +124,7 @@
     <!-- Call to Action Section -->
     <div class="framework-cta">
       <p class="cta-text">
-        Conoce qué tan alineados están tus equipos con tus objetivos de negocio.
+        ¿Están tus iniciativas y equipos alineados?
       </p>
       <button class="cta-button" onclick="window.location.href='/evaluacion'">
         <span class="button-text">Realizar evaluación</span>
@@ -245,16 +245,15 @@
   }
 
   .framework-box {
-    background: white;
+    background: #000;
     border: 2px solid #000;
     border-radius: 8px; /* Reduced from 12px */
-    padding: 0.5rem; /* Further reduced from 0.75rem */
+    padding: 1rem 0.5rem; /* Further reduced from 0.75rem */
     text-align: center;
     font-weight: 600;
     font-size: clamp(0.65rem, 1.5vw, 0.75rem); /* Further reduced from clamp(0.75rem, 1.8vw, 0.875rem) */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced from 0 4px 6px */
     width: 120px; /* Further reduced from 160px */
-    height: 45px; /* Further reduced from 60px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,7 +276,7 @@
   .framework-box span {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #000000;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.2;
@@ -286,7 +285,9 @@
 
   /* Only the business goal box is different (black background, white text) */
   .business-goal {
-    background: #f26168 ;
+    background: #ef1d27 ;
+    padding: 3rem 2rem;
+    border: none;
   }
 
   .business-goal span {
@@ -319,34 +320,37 @@
   }
 
   .cta-text {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* Further reduced from clamp(1.1rem, 2.5vw, 1.5rem) */
+    font-size: clamp(1.4rem, 2vw, 1.2rem); /* Further reduced from clamp(1.1rem, 2.5vw, 1.5rem) */
     font-weight: 300;
+    font-style: italic;
     color: #000000;
     max-width: 600px; /* Further reduced from 800px */
-    margin: 0 auto 1.5rem; /* Further reduced from 2rem */
+    margin: 0 auto 2rem; /* Further reduced from 2rem */
     line-height: 1.4;
     letter-spacing: 0.02em;
   }
 
   .cta-button {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
+    background-color: #ef1d27;
+    color: #fff;
+    border: 3px solid #000;
+    margin: 2rem auto;
     padding: 1.25rem 2.5rem; /* Reduced from 1.5rem 3rem */
-    font-size: 1rem; /* Reduced from 1.125rem */
+    font-size: 1.5rem; /* Reduced from 1.125rem */
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 100px;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     z-index: 1;
     min-width: 180px; /* Reduced from 200px */
     justify-content: center;
+    box-shadow: 0 5px 15px rgba(53, 17, 17, 0.2);
   }
 
   .cta-button::before {
@@ -376,6 +380,16 @@
   .button-arrow {
     transition: transform 0.3s ease;
     font-size: 1.25rem;
+    animation: arrowPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes arrowPulse {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(3px);
+    }
   }
 
   /* Responsive Design */

@@ -4,7 +4,7 @@
 
 <section class="value-section">
   <div class="container">
-    <h2 class="value-title">+20 AÑOS DE EXPERIENCIA</h2>
+    <h2 class="value-title">SERVICIOS</h2>
     <p class="value-description">
       Si bien todos los caminos llegan a Roma, no todos los caminos son iguales. 
       En MR Roma ofrecemos el valor de la experiencia para potenciar tu talento interno y llegar a Roma, sin darse tantas vueltas.
@@ -12,57 +12,65 @@
     <div class="services-grid">
       <div class="service-item" data-service="talleres">
         <div class="service-number">01</div>
-        <h3 class="service-title">TALLERES</h3>
-        <p class="service-description">Capacitación práctica y experiencial para equipos de alto rendimiento</p>
+        <h3 class="service-title">OKR KICK OFF</h3>
+        <p class="service-description">Potenciamos tu estrategia, a traves de una adecuada bajada de los objetivos a tu equipos.</p>
         <div class="service-line"></div>
         
         <!-- Hover reveal content -->
         <div class="service-hover-content">
           <div class="hover-content-text">
-            <p>Realizamos el levantamiento de los objetivos de negocios para alinear las iniciativas de Producto y Tecnología con estos y realizar la bajada en un taller dinamico que asegure la sincronizacion de tus equipos con los objetivos de Negocio.<p>
+            <p>"Una estrategia bien definida sin una comunicacion adecuada no genera impacto".<p>
+            <p>Realizamos talleres dinamicos de bajada de tus estrategia y objetivos a tus equipos, para potenciar tu estrategia.</p>
           </div>
+          <button class="contact-button">Contactar</button>
         </div>
       </div>
       
       <div class="service-item" data-service="mentorias">
         <div class="service-number">02</div>
         <h3 class="service-title">MENTORÍAS</h3>
-        <p class="service-description">Acompañamiento personalizado en el desarrollo de liderazgo</p>
+        <p class="service-description">Potenciamos el talento de tus lideres con nuestra experiencia.</p>
         <div class="service-line"></div>
         
         <!-- Hover reveal content -->
         <div class="service-hover-content">
           <div class="hover-content-text">
-            <p>Potenciamos tu talentos internos y liderazgo traspasando el conocimiento acumulado de la experiencia de haber trabajado con equipos interdisciplinarios en distintas industrias y países.</p>
+            <p>"Talento sin experiencia es eficaz, pero no eficiente".</p>
+            <p>Realizamos sesiones de trabajo periodicas con tus lideres para traspasar experiencia y potenciar su talento con conocimientos.</p>
           </div>
+          <button class="contact-button">Contactar</button>
         </div>
       </div>
       
       <div class="service-item" data-service="asesorias">
         <div class="service-number">03</div>
-        <h3 class="service-title">ASESORÍAS</h3>
-        <p class="service-description">Consultoría estratégica especializada en transformación digital</p>
+        <h3 class="service-title">CONSULTORIA</h3>
+        <p class="service-description">Aseguramos impactar tus objetivos, a traves la planificacion y ejecucion correcta de tus proyectos claves.</p>
         <div class="service-line"></div>
         
         <!-- Hover reveal content -->
         <div class="service-hover-content">
           <div class="hover-content-text">
-            <p>Apoyamos en la construcción de la estrategia e iniciativas de Producto y Tecnología para cumplimiento de los objetivos estratégicos del Negocio.</p>
+            <p>"Una buena idea, sin una correcta ejecucion, termina siendo una mala idea".</p>
+            <p>Realizamos sesiones periodicas de revision con tus lideres, para asegurar el impacto en tus objetivos.</p>
           </div>
+          <button class="contact-button">Contactar</button>
         </div>
       </div>
       
       <div class="service-item" data-service="lanzamientos">
         <div class="service-number">04</div>
         <h3 class="service-title">LANZAMIENTOS</h3>
-        <p class="service-description">Implementación y ejecución de proyectos críticos</p>
+        <p class="service-description">Potenciamos el impacto de tus proyectos claves, a traves de una estrategia de lanzamiento ad-hoc.</p>
         <div class="service-line"></div>
         
         <!-- Hover reveal content -->
         <div class="service-hover-content">
           <div class="hover-content-text">
-            <p>Apoyamos en la construcción de estrategia de lanzamientos de nuevos productos y servicios digitales para asegurar un impacto en el ecosistema en el que compite.</p>
+            <p>"Un producto sin estrategia de lanzamiento, es un producto No terminado".</p>
+            <p>Realizamos la planificacion y ejecucion de un estrategia de lanzamientos, para potenciar el impacto de tus desarrollos.</p>
           </div>
+          <button class="contact-button">Contactar</button>
         </div>
       </div>
     </div>
@@ -72,7 +80,7 @@
 <style>
   .value-section {
     padding: 5rem 0; /* Further reduced from 6rem */
-    background-color: transparent;
+    background-color: #e9e9e9;
     position: relative;
   }
 
@@ -154,11 +162,17 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    background: #ffffff;
+    background: #000;
     min-height: 160px; /* Further reduced from 200px */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(53, 17, 17, 0.2);
+    border-radius: 10px;
+  }
+
+  .service-item:hover {
+    min-height: 290px; /* Increased height for hover content */
   }
 
   .service-item::before {
@@ -168,7 +182,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f26168;
+    background-color: #ef1d27;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -188,25 +202,26 @@
   .service-number {
     font-size: 2.5rem; /* Further reduced from 3rem */
     font-weight: 100;
-    color: #000000;
+    color: #fff;
     margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
     transition: all 0.3s ease;
     line-height: 1;
-    opacity: 0.3;
+    opacity: 0.8;
   }
 
   .service-item:hover .service-number {
     color: #ffffff;
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
   .service-title {
-    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive sizing */
+    font-size: clamp(1.7rem, 2.5vw, 1.5rem); /* Responsive sizing */
     font-weight: 900;
     letter-spacing: 0.15em;
     margin-bottom: 0.75rem; /* Further reduced from 1rem */
     transition: color 0.3s ease;
     line-height: 1.2;
+    color: #fff;
   }
 
   .service-description {
@@ -215,13 +230,14 @@
     line-height: 1.6;
     transition: color 0.3s ease;
     flex-grow: 1;
-    margin-bottom: 1rem; /* Further reduced from 1.25rem */
+    margin-bottom: 1rem;
+    color: #fff;
   }
 
   .service-line {
     width: 40px; /* Further reduced from 50px */
     height: 2px;
-    background-color: #000000;
+    background-color: #ef1d27;
     transition: all 0.3s ease;
   }
 
@@ -242,7 +258,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f26168;
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -260,7 +276,7 @@
   }
 
   .hover-content-text {
-    color: #ffffff;
+    color: #000;
     text-align: center;
     line-height: 1.6;
     font-weight: 400;
@@ -271,8 +287,41 @@
     font-size: clamp(0.75rem, 2vw, 1.2rem); /* Responsive sizing */
   }
 
+  .hover-content-text p:first-child {
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(0.55rem, 2vw, 1.2rem);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
   .hover-content-text p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+  }
+
+  .contact-button {
+    background-color: #ef1d27;
+    color: #ffffff;
+    border: 2px solid #ef1d27;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1.5rem;
+  }
+
+  .contact-button:hover {
+    background-color: transparent;
+    color: #ef1d27;
+    border-color: #ef1d27;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239, 29, 39, 0.3);
   }
 
   /* Hide original content on hover */
