@@ -1,10 +1,6 @@
 ---
-// Evaluation Form Page
-import EvaluationHeader from '../components/evaluacion/EvaluationHeader.astro';
-import RevenueStreams from '../components/evaluacion/RevenueStreams.astro';
-import OKRs from '../components/evaluacion/OKRs.astro';
-import EvaluationFooter from '../components/evaluacion/EvaluationFooter.astro';
-import FormStateManager from '../components/evaluacion/FormStateManager.astro';
+// Strategy Evaluation Page
+import StrategySection from '../components/evaluacion/StrategySection.astro';
 ---
 
 <!DOCTYPE html>
@@ -12,27 +8,17 @@ import FormStateManager from '../components/evaluacion/FormStateManager.astro';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evaluación de Alineación - MR ROMA</title>
+  <title>Estrategia de Negocio - MR ROMA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page-container">
-    <!-- Form Section -->
-    <main class="form-section">
-      <div class="container">
-        <form class="evaluation-form" id="evaluationForm">
-          <EvaluationHeader />
-          <RevenueStreams />
-          <OKRs />
-          <EvaluationFooter />
-        </form>
-      </div>
+    <main class="strategy-section">
+      <StrategySection />
     </main>
   </div>
-
-  <FormStateManager />
 
   <style>
     * {
@@ -58,14 +44,8 @@ import FormStateManager from '../components/evaluacion/FormStateManager.astro';
       padding: 0 2rem;
     }
 
-    /* Form Section Styles */
-    .form-section {
-      padding: 2rem 0 3rem 0;
-      background: transparent;
-    }
-
-    .evaluation-form {
-      width: 100%;
+    /* Strategy Section Styles */
+    .strategy-section {
       background: transparent;
     }
 
@@ -94,9 +74,7 @@ import FormStateManager from '../components/evaluacion/FormStateManager.astro';
         padding: 0 1.5rem;
       }
       
-      .form-section {
-        padding: 1.5rem 0 2rem 0;
-      }
+
     }
 
     @media (max-width: 480px) {
@@ -105,141 +83,10 @@ import FormStateManager from '../components/evaluacion/FormStateManager.astro';
         padding: 0 1rem;
       }
       
-      .form-section {
-        padding: 1rem 0 1.5rem 0;
-      }
+
     }
   </style>
 
-  <script>
-    // Form submission handler with improved state management
-    class EvaluationFormHandler {
-      private form: HTMLFormElement | null;
-      private formStateManager: any;
 
-      constructor() {
-        this.form = document.getElementById('evaluationForm') as HTMLFormElement;
-        this.formStateManager = (window as any).formStateManager;
-        this.init();
-      }
-
-      private init(): void {
-        if (this.form) {
-          this.form.addEventListener('submit', this.handleSubmit.bind(this));
-        }
-      }
-
-      private async handleSubmit(e: Event): Promise<void> {
-        e.preventDefault();
-        
-        if (!this.form) return;
-        
-        try {
-          // Show loading state
-          this.showLoadingState();
-          
-          // Collect form data
-          const formData = new FormData(this.form);
-          const data = Object.fromEntries(formData);
-          
-          // Validate form data
-          if (!this.validateFormData(data)) {
-            this.showError('Por favor, completa todos los campos requeridos');
-            return;
-          }
-          
-          // Simulate API call
-          await this.submitFormData(data);
-          
-          // Show success message
-          this.showSuccess();
-          
-          // Reset form
-          this.resetForm();
-          
-        } catch (error) {
-          console.error('Form submission error:', error);
-          this.showError('Error al enviar el formulario. Inténtalo de nuevo.');
-        } finally {
-          this.hideLoadingState();
-        }
-      }
-
-      private validateFormData(data: any): boolean {
-        // Basic validation - check if required fields have values
-        const requiredFields = Object.keys(data).filter(key => 
-          key.includes('businessName') || 
-          key.includes('revenueGrowth') || 
-          key.includes('okrObjective') || 
-          key.includes('okrKeyResult')
-        );
-        
-        return requiredFields.every(field => data[field] && data[field].trim() !== '');
-      }
-
-      private async submitFormData(data: any): Promise<void> {
-        // Simulate API call delay
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            console.log('Form data submitted:', data);
-            resolve();
-          }, 1000);
-        });
-      }
-
-      private showLoadingState(): void {
-        const submitBtn = this.form?.querySelector('.submit-btn');
-        if (submitBtn) {
-          submitBtn.textContent = 'Enviando...';
-          submitBtn.setAttribute('disabled', 'true');
-        }
-      }
-
-      private hideLoadingState(): void {
-        const submitBtn = this.form?.querySelector('.submit-btn');
-        if (submitBtn) {
-          submitBtn.textContent = 'Enviar Evaluación';
-          submitBtn.removeAttribute('disabled');
-        }
-      }
-
-      private showSuccess(): void {
-        alert('¡Gracias por tu evaluación! Recibirás un análisis detallado en las próximas 24-48 horas.');
-      }
-
-      private showError(message: string): void {
-        alert(message);
-      }
-
-      private resetForm(): void {
-        if (this.form) {
-          this.form.reset();
-        }
-        
-        // Reset all form components using the state manager
-        if (this.formStateManager) {
-          this.formStateManager.resetAll();
-        }
-      }
-
-      public destroy(): void {
-        if (this.form) {
-          this.form.removeEventListener('submit', this.handleSubmit.bind(this));
-        }
-        this.form = null;
-        this.formStateManager = null;
-      }
-    }
-
-    // Initialize when DOM is ready
-    let formHandler: EvaluationFormHandler;
-    
-    document.addEventListener('DOMContentLoaded', function() {
-      // Wait for FormStateManager to be available
-      setTimeout(() => {
-        formHandler = new EvaluationFormHandler();
-      }, 100);
-    });
-  </script>
 </body>
 </html>

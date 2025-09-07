@@ -79,7 +79,7 @@
 
 <style>
   .value-section {
-    padding: 5rem 0; /* Further reduced from 6rem */
+    padding: 5rem 0;
     background-color: #e9e9e9;
     position: relative;
   }
@@ -139,7 +139,7 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem; /* Further reduced from 2rem */
+    gap: 1.5rem;
     max-width: 100%;
     margin: 0 auto;
     position: relative;
@@ -156,14 +156,14 @@
 
   .service-item {
     text-align: left;
-    padding: 1.5rem 1.25rem; /* Further reduced from 2rem 1.5rem */
+    padding: 1.5rem 1.25rem;
     border: 2px solid #000000;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     background: #000;
-    min-height: 160px; /* Further reduced from 200px */
+    min-height: 160px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -172,7 +172,7 @@
   }
 
   .service-item:hover {
-    min-height: 290px; /* Increased height for hover content */
+    min-height: 290px;
   }
 
   .service-item::before {
@@ -200,10 +200,10 @@
   }
 
   .service-number {
-    font-size: 2.5rem; /* Further reduced from 3rem */
+    font-size: 2.5rem;
     font-weight: 100;
     color: #fff;
-    margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
+    margin-bottom: 0.5rem;
     transition: all 0.3s ease;
     line-height: 1;
     opacity: 0.8;
@@ -215,17 +215,17 @@
   }
 
   .service-title {
-    font-size: clamp(1.7rem, 2.5vw, 1.5rem); /* Responsive sizing */
+    font-size: clamp(1.7rem, 2.5vw, 1.5rem);
     font-weight: 900;
     letter-spacing: 0.15em;
-    margin-bottom: 0.75rem; /* Further reduced from 1rem */
+    margin-bottom: 0.75rem;
     transition: color 0.3s ease;
     line-height: 1.2;
     color: #fff;
   }
 
   .service-description {
-    font-size: clamp(0.75rem, 2vw, 1.2rem); /* Responsive sizing */
+    font-size: clamp(0.75rem, 2vw, 1.2rem);
     font-weight: 300;
     line-height: 1.6;
     transition: color 0.3s ease;
@@ -235,7 +235,7 @@
   }
 
   .service-line {
-    width: 40px; /* Further reduced from 50px */
+    width: 40px;
     height: 2px;
     background-color: #ef1d27;
     transition: all 0.3s ease;
@@ -243,7 +243,7 @@
 
   .service-item:hover .service-line {
     background-color: #ffffff;
-    width: 60px; /* Further reduced from 80px */
+    width: 60px;
   }
 
   .service-item:hover .service-title,
@@ -251,7 +251,6 @@
     color: #ffffff;
   }
 
-  /* Hover reveal effect for new text */
   .service-hover-content {
     position: absolute;
     top: 0;
@@ -263,7 +262,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.25rem; /* Further reduced from 1.5rem */
+    padding: 1.25rem;
     opacity: 0;
     transform: translateY(100%);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -283,8 +282,8 @@
   }
 
   .hover-content-text p {
-    margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
-    font-size: clamp(0.75rem, 2vw, 1.2rem); /* Responsive sizing */
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.75rem, 2vw, 1.2rem);
   }
 
   .hover-content-text p:first-child {
@@ -324,7 +323,6 @@
     box-shadow: 0 5px 15px rgba(239, 29, 39, 0.3);
   }
 
-  /* Hide original content on hover */
   .service-item:hover .service-number,
   .service-item:hover .service-title,
   .service-item:hover .service-description,
@@ -333,86 +331,85 @@
     transform: translateY(-20px);
   }
 
-  /* Responsive */
   @media (min-width: 1400px) {
     .value-title {
-      font-size: 3.5rem; /* Align with FrameworkSection */
-      margin-bottom: 2rem; /* Further reduced from 2.5rem */
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
     }
     
     .value-description {
-      font-size: 1.3rem; /* Align with FrameworkSection */
-      max-width: 700px; /* Align with FrameworkSection */
+      font-size: 1.3rem;
+      max-width: 700px;
     }
   }
 
   @media (max-width: 1399px) and (min-width: 1024px) {
     .value-title {
-      font-size: clamp(2rem, 3vw, 3rem); /* Align with FrameworkSection */
+      font-size: clamp(2rem, 3vw, 3rem);
       margin-bottom: 1.5rem;
     }
     
     .value-description {
-      font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Align with FrameworkSection */
-      max-width: 600px; /* Align with FrameworkSection */
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      max-width: 600px;
     }
   }
 
   @media (max-width: 1023px) and (min-width: 768px) {
     .value-title {
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* Align with FrameworkSection */
-      margin-bottom: 1rem; /* Align with FrameworkSection */
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
     }
     
     .value-description {
-      font-size: clamp(0.8rem, 2vw, 1rem); /* Align with FrameworkSection */
-      max-width: 500px; /* Align with FrameworkSection */
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      max-width: 500px;
     }
   }
 
   @media (max-width: 767px) and (min-width: 481px) {
     .value-title {
-      font-size: clamp(1.5rem, 4vw, 2rem); /* Align with FrameworkSection */
-      margin-bottom: 1rem; /* Align with FrameworkSection */
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
     }
     
     .value-description {
-      font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* Align with FrameworkSection */
-      max-width: 450px; /* Align with FrameworkSection */
+      font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+      max-width: 450px;
     }
   }
 
   @media (max-width: 480px) {
     .value-section {
-      padding: 3rem 0; /* Align with FrameworkSection */
+      padding: 3rem 0;
     }
     
     .value-title {
-      font-size: clamp(1.25rem, 4.5vw, 1.75rem); /* Align with FrameworkSection */
-      margin-bottom: 0.75rem; /* Align with FrameworkSection */
+      font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+      margin-bottom: 0.75rem;
     }
     
     .value-description {
-      font-size: clamp(0.6rem, 3vw, 0.8rem); /* Align with FrameworkSection */
+      font-size: clamp(0.6rem, 3vw, 0.8rem);
       max-width: 100%;
-      margin-bottom: 1.5rem; /* Align with FrameworkSection */
+      margin-bottom: 1.5rem;
     }
     
     .services-grid {
-      gap: 1rem; /* Further reduced from 1.25rem */
+      gap: 1rem;
     }
     
     .service-item {
-      padding: 1.25rem 1rem; /* Further reduced from 1.5rem 1.25rem */
-      min-height: 140px; /* Further reduced from 180px */
+      padding: 1.25rem 1rem;
+      min-height: 140px;
     }
     
     .service-number {
-      font-size: 1.75rem; /* Further reduced from 2rem */
+      font-size: 1.75rem;
     }
     
     .service-title {
-      font-size: 0.875rem; /* Further reduced from 1rem */
+      font-size: 0.875rem;
     }
   }
 </style>

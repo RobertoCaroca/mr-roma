@@ -58,7 +58,7 @@
 
 <style>
   .vision-section {
-    padding: 6rem 0; /* Reduced from 8rem */
+    padding: 6rem 0;
     background: transparent;
   }
 
@@ -98,9 +98,9 @@
 
   .vision-diagram {
     position: relative;
-    max-width: 70%; /* Reduced from 80% */
+    max-width: 70%;
     margin: 0 auto;
-    padding: 1.5rem 0; /* Reduced from 2rem */
+    padding: 1.5rem 0;
     overflow: visible;
   }
 
@@ -123,19 +123,21 @@
   }
 
   .triangle {
-    width: 180px; /* Further reduced for better fit */
-    height: 156px; /* Further reduced for better fit */
+    width: 180px;
+    height: 156px;
     background-color: #f26168;
     position: relative;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) translateZ(0);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
   }
 
   .triangle.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 
   .triangle-up {
@@ -182,96 +184,95 @@
     color: #ffffff;
   }
 
-  /* Responsive */
   @media (min-width: 1400px) {
     .vision-title {
-      font-size: 3.5rem; /* Reduced from 4rem */
+      font-size: 3.5rem;
       margin-bottom: 1.5rem;
     }
     
     .vision-description {
-      font-size: 1.3rem; /* Align with FrameworkSection */
-      max-width: 700px; /* Align with FrameworkSection */
+      font-size: 1.3rem;
+      max-width: 700px;
     }
   }
 
   @media (max-width: 1399px) and (min-width: 1024px) {
     .vision-title {
-      font-size: clamp(2rem, 3vw, 3rem); /* Align with FrameworkSection */
+      font-size: clamp(2rem, 3vw, 3rem);
       margin-bottom: 1.5rem;
     }
     
     .vision-description {
-      font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Align with FrameworkSection */
-      max-width: 600px; /* Align with FrameworkSection */
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      max-width: 600px;
     }
   }
 
   @media (max-width: 1023px) and (min-width: 768px) {
     .vision-title {
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* Align with FrameworkSection */
-      margin-bottom: 1rem; /* Align with FrameworkSection */
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
     }
     
     .vision-description {
-      font-size: clamp(0.8rem, 2vw, 1rem); /* Align with FrameworkSection */
-      max-width: 500px; /* Align with FrameworkSection */
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      max-width: 500px;
     }
     
     .triangle {
-      width: 180px; /* Reduced for medium screens */
-      height: 156px; /* Reduced for medium screens */
+      width: 180px;
+      height: 156px;
     }
     
     .shape-container {
-      margin: 0 -40px; /* Reduced for medium screens */
+      margin: 0 -40px;
     }
   }
 
   @media (max-width: 767px) and (min-width: 481px) {
     .vision-title {
-      font-size: clamp(1.5rem, 4vw, 2rem); /* Align with FrameworkSection */
-      margin-bottom: 1rem; /* Align with FrameworkSection */
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
     }
     
     .vision-description {
-      font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* Align with FrameworkSection */
-      max-width: 450px; /* Align with FrameworkSection */
+      font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+      max-width: 450px;
     }
     
     .triangle {
-      width: 160px; /* Reduced for small screens */
-      height: 139px; /* Reduced for small screens */
+      width: 160px;
+      height: 139px;
     }
     
     .shape-container {
-      margin: 0 -35px; /* Reduced for small screens */
+      margin: 0 -35px;
     }
   }
 
   @media (max-width: 480px) {
     .vision-section {
-      padding: 3rem 0; /* Align with FrameworkSection */
+      padding: 3rem 0;
     }
     
     .vision-title {
-      font-size: clamp(1.25rem, 4.5vw, 1.75rem); /* Align with FrameworkSection */
-      margin-bottom: 0.75rem; /* Align with FrameworkSection */
+      font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+      margin-bottom: 0.75rem;
     }
     
     .vision-description {
-      font-size: clamp(0.6rem, 3vw, 0.8rem); /* Align with FrameworkSection */
+      font-size: clamp(0.6rem, 3vw, 0.8rem);
       max-width: 100%;
-      margin-bottom: 1.5rem; /* Align with FrameworkSection */
+      margin-bottom: 1.5rem;
     }
     
     .triangle {
-      width: 140px; /* Reduced for mobile */
-      height: 121px; /* Reduced for mobile */
+      width: 140px;
+      height: 121px;
     }
     
     .shape-container {
-      margin: 0 -30px; /* Reduced for mobile */
+      margin: 0 -30px;
     }
   }
 </style>

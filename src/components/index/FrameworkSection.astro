@@ -136,7 +136,7 @@
 
 <style>
   .framework-section {
-    padding: 4rem 0; /* Further reduced from 6rem */
+    padding: 4rem 0;
     background: transparent;
     position: relative;
   }
@@ -177,24 +177,24 @@
 
   .framework-diagram {
     position: relative;
-    max-width: 700px; /* Further reduced from 900px */
+    max-width: 700px;
     margin: 0 auto;
-    padding: 1rem 0; /* Further reduced from 1.5rem */
+    padding: 1rem 0;
   }
 
   .level {
     display: grid;
-    grid-template-columns: 120px 120px 120px; /* Further reduced from 160px 160px 160px */
-    gap: 1rem; /* Further reduced from 1.5rem */
-    margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
+    grid-template-columns: 120px 120px 120px;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
     position: relative;
     align-items: center;
     justify-content: center;
   }
 
   .level-1 {
-    margin-bottom: 0.5rem; /* Further reduced from 0.75rem */
-    grid-template-columns: 120px 120px 120px; /* Further reduced from 160px 160px 160px */
+    margin-bottom: 0.5rem;
+    grid-template-columns: 120px 120px 120px;
   }
 
   .level-1 .framework-box {
@@ -235,37 +235,39 @@
   }
 
   .arrow-container {
-    height: 12px; /* Further reduced from 15px */
+    height: 12px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 120px; /* Further reduced from 160px */
+    max-width: 120px;
     margin: 0 auto;
   }
 
   .framework-box {
     background: #000;
     border: 2px solid #000;
-    border-radius: 8px; /* Reduced from 12px */
-    padding: 1rem 0.5rem; /* Further reduced from 0.75rem */
+    border-radius: 8px;
+    padding: 1rem 0.5rem;
     text-align: center;
     font-weight: 600;
-    font-size: clamp(0.65rem, 1.5vw, 0.75rem); /* Further reduced from clamp(0.75rem, 1.8vw, 0.875rem) */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced from 0 4px 6px */
-    width: 120px; /* Further reduced from 160px */
+    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) translateZ(0);
     transition: all 0.6s ease;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
   }
 
   .framework-box.animate-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 
   .framework-box:hover {
@@ -283,9 +285,8 @@
     text-align: center;
   }
 
-  /* Only the business goal box is different (black background, white text) */
   .business-goal {
-    background: #ef1d27 ;
+    background: #ef1d27;
     padding: 3rem 2rem;
     border: none;
   }
@@ -294,13 +295,12 @@
     color: #ffffff;
   }
 
-  /* Arrow styles */
   .arrow-down {
     width: 0;
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 10px solid #f26168; /* Changed from #333 to #000 for better visibility */
+    border-top: 10px solid #f26168;
     margin: 0 auto;
     opacity: 0;
     transform: translateY(12px);
@@ -312,20 +312,19 @@
     transform: translateY(0);
   }
 
-  /* Call to Action Section */
   .framework-cta {
     text-align: center;
-    margin-top: 2.5rem; /* Further reduced from 4rem */
-    padding: 1.5rem 0; /* Further reduced from 2rem */
+    margin-top: 2.5rem;
+    padding: 1.5rem 0;
   }
 
   .cta-text {
-    font-size: clamp(1.4rem, 2vw, 1.2rem); /* Further reduced from clamp(1.1rem, 2.5vw, 1.5rem) */
+    font-size: clamp(1.4rem, 2vw, 1.2rem);
     font-weight: 300;
     font-style: italic;
     color: #000000;
-    max-width: 600px; /* Further reduced from 800px */
-    margin: 0 auto 2rem; /* Further reduced from 2rem */
+    max-width: 600px;
+    margin: 0 auto 2rem;
     line-height: 1.4;
     letter-spacing: 0.02em;
   }
@@ -335,8 +334,8 @@
     color: #fff;
     border: 3px solid #000;
     margin: 2rem auto;
-    padding: 1.25rem 2.5rem; /* Reduced from 1.5rem 3rem */
-    font-size: 1.5rem; /* Reduced from 1.125rem */
+    padding: 1.25rem 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
@@ -348,7 +347,7 @@
     align-items: center;
     gap: 0.5rem;
     z-index: 1;
-    min-width: 180px; /* Reduced from 200px */
+    min-width: 180px;
     justify-content: center;
     box-shadow: 0 5px 15px rgba(53, 17, 17, 0.2);
   }
@@ -392,7 +391,6 @@
     }
   }
 
-  /* Responsive Design */
   @media (min-width: 1400px) {
     .framework-title {
       font-size: 3.5rem;
@@ -407,34 +405,34 @@
 
   @media (max-width: 1399px) and (min-width: 1024px) {
     .framework-title {
-      font-size: clamp(2rem, 3vw, 3rem); /* Further reduced from clamp(2.5rem, 3.5vw, 3.5rem) */
-      margin-bottom: 1.5rem; /* Further reduced from 2rem */
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 1.5rem;
     }
     
     .framework-description {
-      font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Further reduced from clamp(1rem, 2vw, 1.3rem) */
-      max-width: 600px; /* Further reduced from 700px */
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      max-width: 600px;
     }
   }
 
   @media (max-width: 1023px) and (min-width: 768px) {
     .framework-title {
-      font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* Further reduced from clamp(2rem, 4vw, 3rem) */
-      margin-bottom: 1rem; /* Further reduced from 1.5rem */
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
     }
     
     .framework-description {
-      font-size: clamp(0.8rem, 2vw, 1rem); /* Further reduced from clamp(0.9rem, 2.5vw, 1.2rem) */
-      max-width: 500px; /* Further reduced from 600px */
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      max-width: 500px;
     }
     
     .level {
-      gap: 1.5rem; /* Further reduced from 2rem */
-      margin-bottom: 2rem; /* Further reduced from 3rem */
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
     
     .framework-box {
-      padding: 0.5rem 0.75rem; /* Further reduced from 0.75rem 1rem */
+      padding: 0.5rem 0.75rem;
     }
   }
 
@@ -676,7 +674,7 @@
         }
       };
       
-      window.addEventListener('scroll', throttledScrollHandler);
+      window.addEventListener('scroll', throttledScrollHandler, { passive: true });
     }
 
     private handleScroll(): void {

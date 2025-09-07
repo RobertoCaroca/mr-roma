@@ -1,0 +1,442 @@
+---
+// Spheres Component - Convergence visualization with orbital spheres
+---
+
+<div class="convergence-visualization">
+  <!-- Business Sphere (Center) -->
+  <div class="sphere business-sphere" data-label="Negocio">
+    <div class="sphere-content">
+      <span class="sphere-text">Negocio</span>
+    </div>
+  </div>
+  
+  <!-- Orbital Spheres -->
+  <div class="sphere ux-sphere" data-label="UX">
+    <div class="sphere-content">
+      <span class="sphere-text">UX</span>
+    </div>
+  </div>
+  
+  <div class="sphere product-sphere" data-label="PRODUCTO">
+    <div class="sphere-content">
+      <span class="sphere-text">PRODUCTO</span>
+    </div>
+  </div>
+  
+  <div class="sphere tech-sphere" data-label="TECNOLOGÍA">
+    <div class="sphere-content">
+      <span class="sphere-text">TECNOLOGÍA</span>
+    </div>
+  </div>
+  
+  <!-- Convergence Rings -->
+  <div class="convergence-rings">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
+  </div>
+</div>
+
+<style>
+  /* ===== CONVERGENCE VISUALIZATION ===== */
+  .convergence-visualization {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    max-width: 700px;
+    margin: 2rem auto 0;
+    z-index: 10;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  @media (max-width: 1023px) {
+    .convergence-visualization {
+      width: 500px;
+      height: 500px;
+      max-width: 400px;
+      margin: 1rem auto 0;
+    }
+  }
+
+  /* ===== SPHERE STYLES ===== */
+  .sphere {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .sphere-content {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 2;
+    position: relative;
+  }
+
+  .sphere-text {
+    font-size: 0.8rem;
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* Business Sphere */
+  .business-sphere {
+    width: 140px;
+    height: 140px;
+    background: #ef1d27;
+    border: 2px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 15px 45px rgba(239, 29, 39, 0.4);
+  }
+
+  .business-sphere .sphere-text {
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+
+  .business-sphere:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 25px 70px rgba(239, 29, 39, 0.4);
+  }
+
+  /* Orbital Spheres */
+  .ux-sphere,
+  .product-sphere,
+  .tech-sphere {
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transform-origin: 0 0;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+  }
+
+  .ux-sphere {
+    animation: orbit-ux 10s linear infinite;
+    animation-play-state: running;
+  }
+
+  .product-sphere {
+    animation: orbit-product 9s linear infinite;
+    animation-play-state: running;
+  }
+
+  .tech-sphere {
+    animation: orbit-tech 11s linear infinite;
+    animation-play-state: running;
+  }
+
+  /* Pause animations when not visible */
+  .convergence-visualization.paused .ux-sphere,
+  .convergence-visualization.paused .product-sphere,
+  .convergence-visualization.paused .tech-sphere {
+    animation-play-state: paused;
+  }
+
+  .convergence-visualization.paused .ring-1,
+  .convergence-visualization.paused .ring-2,
+  .convergence-visualization.paused .ring-3,
+  .convergence-visualization.paused .ring-4 {
+    animation-play-state: paused;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .ux-sphere,
+    .product-sphere,
+    .tech-sphere,
+    .ring-1,
+    .ring-2,
+    .ring-3,
+    .ring-4 {
+      animation: none !important;
+    }
+  }
+
+
+  /* Convergence States */
+  .ux-sphere.converging,
+  .product-sphere.converging,
+  .tech-sphere.converging {
+    transform: translate(-50%, -50%) !important;
+    animation: none !important;
+  }
+
+  .convergence-visualization.converging .ring-1,
+  .convergence-visualization.converging .ring-2,
+  .convergence-visualization.converging .ring-3,
+  .convergence-visualization.converging .ring-4 {
+    animation: none !important;
+  }
+
+  /* ===== CONVERGENCE RINGS ===== */
+  .convergence-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    will-change: transform;
+    transform: translate(-50%, -50%) translateZ(0);
+  }
+
+  .ring {
+    position: absolute;
+    border: 2px dashed rgba(240, 240, 240, 0.3);
+    border-radius: 50%;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .ring-1 {
+    width: 260px;
+    height: 260px;
+    top: -130px;
+    left: -130px;
+    animation: ring-spin-1 20s linear infinite;
+  }
+
+  .ring-2 {
+    width: 370px;
+    height: 370px;
+    top: -185px;
+    left: -185px;
+    animation: ring-spin-2 25s linear infinite reverse;
+  }
+
+  .ring-3 {
+    width: 490px;
+    height: 490px;
+    top: -245px;
+    left: -245px;
+    animation: ring-spin-3 30s linear infinite;
+  }
+
+  .ring-4 {
+    width: 610px;
+    height: 610px;
+    top: -305px;
+    left: -305px;
+    animation: ring-spin-4 35s linear infinite reverse;
+  }
+
+  /* ===== RESPONSIVE DESIGN ===== */
+  @media (max-width: 768px) {
+    .convergence-visualization {
+      width: 300px;
+      height: 300px;
+      max-width: 300px;
+    }
+    
+    .business-sphere {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .ux-sphere,
+    .product-sphere,
+    .tech-sphere {
+      width: 80px;
+      height: 80px;
+      border-width: 2px;
+    }
+    
+    .sphere-text {
+      font-size: 0.6rem;
+    }
+  }
+
+  /* ===== KEYFRAME ANIMATIONS ===== */
+  @keyframes orbit-ux {
+    0% {
+      transform: translate(-50%, -50%) rotate(120deg) translateX(180px) rotate(-120deg) translateZ(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(480deg) translateX(180px) rotate(-480deg) translateZ(0);
+    }
+  }
+
+  @keyframes orbit-product {
+    0% {
+      transform: translate(-50%, -50%) rotate(240deg) translateX(240px) rotate(-240deg) translateZ(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(600deg) translateX(240px) rotate(-600deg) translateZ(0);
+    }
+  }
+
+  @keyframes orbit-tech {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(210px) rotate(0deg) translateZ(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg) translateX(210px) rotate(360deg) translateZ(0);
+    }
+  }
+
+  @keyframes ring-spin-1 {
+    0% { transform: rotate(0deg) translateZ(0); }
+    100% { transform: rotate(360deg) translateZ(0); }
+  }
+
+  @keyframes ring-spin-2 {
+    0% { transform: rotate(0deg) translateZ(0); }
+    100% { transform: rotate(360deg) translateZ(0); }
+  }
+
+  @keyframes ring-spin-3 {
+    0% { transform: rotate(0deg) translateZ(0); }
+    100% { transform: rotate(360deg) translateZ(0); }
+  }
+
+  @keyframes ring-spin-4 {
+    0% { transform: rotate(0deg) translateZ(0); }
+    100% { transform: rotate(360deg) translateZ(0); }
+  }
+
+  /* Two-column layout orbital animations */
+  @media (min-width: 1024px) {
+    @keyframes orbit-ux {
+      0% {
+        transform: translate(-50%, -50%) rotate(120deg) translateX(120px) rotate(-120deg) translateZ(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(480deg) translateX(120px) rotate(-480deg) translateZ(0);
+      }
+    }
+
+    @keyframes orbit-product {
+      0% {
+        transform: translate(-50%, -50%) rotate(240deg) translateX(160px) rotate(-240deg) translateZ(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(600deg) translateX(160px) rotate(-600deg) translateZ(0);
+      }
+    }
+
+    @keyframes orbit-tech {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg) translateZ(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(-360deg) translateX(140px) rotate(360deg) translateZ(0);
+      }
+    }
+  }
+</style>
+
+<script>
+  class SpheresController {
+    private isConverging: boolean = false;
+    private container: HTMLElement | null = null;
+    private spheres: { element: HTMLElement | null; top: string }[] = [];
+    private observer: IntersectionObserver | null = null;
+
+    constructor() {
+      this.cacheElements();
+      this.initIntersectionObserver();
+    }
+
+    private cacheElements(): void {
+      this.container = document.querySelector('.convergence-visualization');
+      this.spheres = [
+        { element: document.querySelector('.ux-sphere') as HTMLElement, top: '65%' },
+        { element: document.querySelector('.product-sphere') as HTMLElement, top: '80%' },
+        { element: document.querySelector('.tech-sphere') as HTMLElement, top: '95%' }
+      ];
+    }
+
+    private initIntersectionObserver(): void {
+      if (!this.container) return;
+
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Resume animations when visible
+              this.container?.classList.remove('paused');
+            } else {
+              // Pause animations when not visible
+              this.container?.classList.add('paused');
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Trigger when 10% visible
+          rootMargin: '50px' // Add some margin for smoother transitions
+        }
+      );
+
+      this.observer.observe(this.container);
+    }
+
+    public startConvergence(): void {
+      if (this.isConverging) return;
+      this.isConverging = true;
+      
+      if (this.container) {
+        this.container.classList.add('converging');
+      }
+      
+      this.setSpherePositions(true);
+    }
+
+    public revertToOrbit(): void {
+      if (!this.isConverging) return;
+      this.isConverging = false;
+      
+      if (this.container) {
+        this.container.classList.remove('converging');
+      }
+      
+      this.setSpherePositions(false);
+    }
+
+    private setSpherePositions(converging: boolean): void {
+      this.spheres.forEach(({ element, top }) => {
+        if (!element) return;
+        
+        if (converging) {
+          element.classList.add('converging');
+          element.style.top = top;
+          element.style.left = '50%';
+        } else {
+          element.classList.remove('converging');
+          element.style.top = '50%';
+          element.style.left = '50%';
+        }
+      });
+    }
+
+    public destroy(): void {
+      if (this.observer) {
+        this.observer.disconnect();
+        this.observer = null;
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    (window as any).spheresController = new SpheresController();
+  });
+</script>
