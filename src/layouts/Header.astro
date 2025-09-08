@@ -25,6 +25,11 @@
     padding: 1rem 0;
     z-index: 1000;
     transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .fixed-header.hidden {
+    transform: translateY(-100%);
   }
 
   .header-content {
@@ -56,10 +61,10 @@
   }
 
   .login-btn {
-    background: linear-gradient(135deg, #ef1d27, #f26168);
+    background: transparent;
     border: 2px solid #fff;
     color: #fff;
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 1.5rem;
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -101,3 +106,39 @@
   }
 </style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('fixedHeader');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateHeader() {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        // Scrolling down - hide header
+        if (currentScrollY > lastScrollY) {
+          header?.classList.add('hidden');
+        } else {
+          // Scrolling up - show header
+          header?.classList.remove('hidden');
+        }
+      } else {
+        // Near top - always show header
+        header?.classList.remove('hidden');
+      }
+      
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+  });
+</script>

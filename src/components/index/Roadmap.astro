@@ -1,0 +1,254 @@
+---
+// Roadmap Section Component - Strategic path selection interface
+---
+
+<section id="roadmap" class="roadmap-section">
+  <div class="container">
+    <div class="content-layout">
+      <div class="description-column">
+        <h2 class="roadmap-title">Define tu Roadmap</h2>
+        <p class="roadmap-subtitle">Necesitas ayuda para definir qué camino seguir. Selecciona que quiere lograr para ir trazando tu camino.</p>
+      </div>
+      
+      <div class="options-column">
+        <div class="roadmap-options">
+          <button class="roadmap-card" data-option="increase-revenue">
+            <div class="roadmap-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+              </svg>
+            </div>
+            <span class="roadmap-text">Aumentar Ingresos</span>
+          </button>
+          
+          <button class="roadmap-card" data-option="decrease-costs">
+            <div class="roadmap-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </div>
+            <span class="roadmap-text">Disminuir Costos</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .roadmap-section {
+    padding: 5rem 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 7rem 0;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .description-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .roadmap-title {
+    font-size: clamp(3rem, 4vw, 4rem);
+    font-weight: 900;
+    text-align: left;
+    margin: 0;
+    color: #000;
+    letter-spacing: -0.08em;
+    line-height: 1.1;
+  }
+
+  .roadmap-subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 400;
+    color: #000;
+    line-height: 1.4;
+    margin: 0;
+    text-align: left;
+    font-style: italic;
+  }
+
+  .options-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .roadmap-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .roadmap-card {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+    transition: all 0.3s ease;
+    position: relative;
+    will-change: transform;
+    backface-visibility: hidden;
+    cursor: pointer;
+    gap: 1rem;
+  }
+
+  .roadmap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .roadmap-card.selected {
+    background: #f8f8f8;
+    border-color: #ef1d27;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(239, 29, 39, 0.2);
+  }
+
+  .roadmap-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .roadmap-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #000;
+    transition: stroke 0.3s ease;
+  }
+
+  .roadmap-card:hover .roadmap-icon {
+    transform: scale(1.1);
+  }
+
+  .roadmap-card:hover .roadmap-icon svg {
+    stroke: #ef1d27;
+  }
+
+  .roadmap-text {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    color: #ef1d27;
+    line-height: 1.3;
+  }
+
+  .roadmap-card.selected .roadmap-text {
+    color: #ef1d27;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1023px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .description-column {
+      align-items: center;
+      text-align: center;
+    }
+
+    .roadmap-title {
+      text-align: center;
+    }
+
+    .roadmap-subtitle {
+      text-align: center;
+    }
+
+    .roadmap-options {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .roadmap-section {
+      padding: 4rem 0;
+    }
+
+    .roadmap-options {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .roadmap-card {
+      min-height: 150px;
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .roadmap-section {
+      padding: 3rem 0;
+    }
+
+    .roadmap-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .roadmap-card {
+      min-height: 120px;
+      padding: 1.5rem 1rem;
+    }
+
+    .roadmap-text {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const roadmapCards = document.querySelectorAll('.roadmap-card');
+    
+    roadmapCards.forEach(card => {
+      card.addEventListener('click', function(this: HTMLElement) {
+        // Remove selected class from all cards
+        roadmapCards.forEach(c => c.classList.remove('selected'));
+        
+        // Add selected class to clicked card
+        this.classList.add('selected');
+        
+        // Get the selected option
+        const option = this.getAttribute('data-option');
+        console.log('Selected roadmap option:', option);
+        
+        // Here you can add logic to proceed to next step
+        // For example: window.location.href = `/roadmap?option=${option}`;
+      });
+    });
+  });
+</script>
