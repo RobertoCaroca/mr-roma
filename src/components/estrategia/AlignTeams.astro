@@ -1,0 +1,312 @@
+---
+// Align Teams Component - Step 4: Make objectives known and align teams
+---
+
+<section class="align-teams-section">
+  <div class="container">
+    <div class="content-layout">
+      <div class="question-column">
+        <div class="step-indicator">Paso 4</div>
+        <h2 class="question-title">Da conocer tus objetivos y alinear equipos</h2>
+      </div>
+      
+      <div class="options-column">
+        <div class="align-cards-grid">
+          <!-- Card 1: Dar a conocer -->
+          <div class="align-card">
+            <div class="card-content">
+              <h3 class="card-title">Dar a conocer</h3>
+              <p class="card-description">Compartes los objetivos definidos con tu equipos.</p>
+              <button class="copy-link-button">
+                <span class="button-text">Compartir Estrategia</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Medir -->
+          <div class="align-card">
+            <div class="card-content">
+              <h3 class="card-title">Medir</h3>
+              <p class="card-description">Enviar encuesta a tus equipos para medir qué tan alineados están.</p>
+              <button class="copy-link-button">
+                <span class="button-text">Enviar Encuesta</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Solicitar -->
+          <div class="align-card">
+            <div class="card-content">
+              <h3 class="card-title">Solicitar</h3>
+              <p class="card-description">Solicitar OKRs a tus equipos alineados con los OKRs de la empresa.</p>
+              <button class="copy-link-button">
+                <span class="button-text">Solicitar OKRs</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .align-teams-section {
+    padding: 1rem 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .question-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .step-indicator {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    font-style: italic;
+    margin-bottom: 0rem;
+  }
+
+  .question-title {
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .options-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .align-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .align-card {
+    background: #fff;
+    border: 2px solid #ef1d27;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .align-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(239, 29, 39, 0.15);
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .card-description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+
+  .copy-link-button {
+    background: #fff;
+    border: 2px solid #ef1d27;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .copy-link-button:hover {
+    background: #ef1d27;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 29, 39, 0.3);
+  }
+
+  .copy-link-button:hover .button-text {
+    color: #fff;
+  }
+
+  .button-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ef1d27;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1023px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .question-column {
+      align-items: center;
+      text-align: center;
+    }
+
+    .question-title {
+      text-align: center;
+    }
+
+    .align-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .align-teams-section {
+      padding: 4rem 0;
+    }
+
+    .align-cards-grid {
+      gap: 1.5rem;
+    }
+
+    .align-card {
+      padding: 1.5rem 1rem;
+      min-height: 180px;
+    }
+
+    .card-content {
+      gap: 1.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .align-teams-section {
+      padding: 3rem 0;
+    }
+
+    .question-title {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .align-card {
+      padding: 1.25rem 0.75rem;
+      min-height: 160px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+    }
+
+    .copy-link-button {
+      padding: 0.6rem 1.2rem;
+    }
+
+    .button-text {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-link-button');
+    
+    copyButtons.forEach(button => {
+      button.addEventListener('click', function(this: HTMLButtonElement) {
+        const card = this.closest('.align-card');
+        const cardTitle = card?.querySelector('.card-title')?.textContent;
+        
+        console.log(`Copy link clicked for: ${cardTitle}`);
+        
+        // Generate the estrategia-empresa URL
+        const baseUrl = window.location.origin;
+        const estrategiaEmpresaUrl = `${baseUrl}/estrategia-empresa`;
+        
+        // Copy the link to clipboard
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(estrategiaEmpresaUrl).then(() => {
+            console.log('Estrategia empresa link copied to clipboard');
+            
+            // Show a brief success message
+            const originalText = this.querySelector('.button-text')?.textContent;
+            const buttonText = this.querySelector('.button-text');
+            if (buttonText) {
+              buttonText.textContent = '¡Copiado!';
+              setTimeout(() => {
+                buttonText.textContent = originalText ?? '';
+              }, 2000);
+            }
+            
+            // Redirect to estrategia-empresa page after a short delay
+            setTimeout(() => {
+              window.location.href = estrategiaEmpresaUrl;
+            }, 1000);
+          }).catch(err => {
+            console.error('Failed to copy link:', err);
+            // Fallback: redirect directly
+            window.location.href = estrategiaEmpresaUrl;
+          });
+        } else {
+          // Fallback for browsers that don't support clipboard API
+          console.log('Clipboard API not supported, redirecting directly');
+          window.location.href = estrategiaEmpresaUrl;
+        }
+      });
+    });
+  });
+</script>

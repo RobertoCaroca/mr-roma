@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StrategyHeader from '../components/estrategia/StrategyHeader.astro';
+import BusinessGoal from '../components/estrategia/BusinessGoal.astro';
+import BusinessLine from '../components/estrategia/BusinessLine.astro';
+import OKRs from '../components/estrategia/OKRs.astro';
+---
+
+<Layout title="Estrategia Empresa - MR Roma">
+  <main class="estrategia-empresa-main">
+    <StrategyHeader />
+    <BusinessGoal />
+    <BusinessLine />
+    <OKRs />
+  </main>
+</Layout>
+
+<style>
+  .estrategia-empresa-main {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    min-height: 100vh;
+  }
+  
+  /* Disable all interactive elements for read-only visualization */
+  .estrategia-empresa-main {
+    pointer-events: none;
+  }
+  
+  /* Re-enable text selection for better UX */
+  .estrategia-empresa-main * {
+    user-select: text;
+  }
+  
+  /* Enhanced input styling for better presentation */
+  .estrategia-empresa-main input {
+    background: #f8f9fa !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    pointer-events: none !important;
+    color: #495057 !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .estrategia-empresa-main input::placeholder {
+    color: #6c757d !important;
+    font-style: italic !important;
+  }
+  
+  /* Style buttons to look like informational badges */
+  .estrategia-empresa-main button {
+    background: linear-gradient(135deg, #ef1d27 0%, #d41e2a 100%) !important;
+    border: none !important;
+    color: #fff !important;
+    cursor: default !important;
+    pointer-events: none !important;
+    box-shadow: 0 4px 12px rgba(239, 29, 39, 0.3) !important;
+    transform: none !important;
+  }
+  
+  /* Remove hover effects */
+  .estrategia-empresa-main *:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+  }
+  
+  /* Enhanced goal selections styling */
+  .estrategia-empresa-main .goal-selection {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%) !important;
+    border: 3px solid #ef1d27 !important;
+    opacity: 1 !important;
+    box-shadow: 0 8px 25px rgba(239, 29, 39, 0.2) !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  .estrategia-empresa-main .goal-text {
+    color: #ef1d27 !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Enhanced card styling */
+  .estrategia-empresa-main .align-card,
+  .estrategia-empresa-main .okr-card,
+  .estrategia-empresa-main .business-line-group {
+    background: #fff !important;
+    border: 2px solid #e9ecef !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transform: none !important;
+  }
+  
+  /* Add sample data styling */
+  .estrategia-empresa-main .percentage-input {
+    background: #e8f5e8 !important;
+    color: #155724 !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+  }
+  
+  .estrategia-empresa-main .business-name-input {
+    background: #fff3cd !important;
+    color: #856404 !important;
+    font-weight: 600 !important;
+  }
+  
+  .estrategia-empresa-main .objective-input,
+  .estrategia-empresa-main .key-result-input {
+    background: #d1ecf1 !important;
+    color: #0c5460 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* Remove number input arrows */
+  .estrategia-empresa-main input[type="number"]::-webkit-outer-spin-button,
+  .estrategia-empresa-main input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+  }
+  
+  .estrategia-empresa-main input[type="number"] {
+    -moz-appearance: textfield !important;
+  }
+  
+  /* Add visual indicators for read-only mode */
+  .estrategia-empresa-main::before {
+    content: 'Vista de Solo Lectura';
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ef1d27 0%, #d41e2a 100%);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(239, 29, 39, 0.3);
+    z-index: 1000;
+    pointer-events: none;
+  }
+  
+  /* Enhanced section spacing */
+  .estrategia-empresa-main section {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* Add subtle background patterns */
+  .estrategia-empresa-main .business-goal-section {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  }
+  
+  .estrategia-empresa-main .business-line-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  }
+  
+  .estrategia-empresa-main .okrs-section {
+    background: linear-gradient(135deg, #fff 0%, #f1f3f4 100%);
+  }
+  
+  .estrategia-empresa-main .align-teams-section {
+    background: linear-gradient(135deg, #f1f3f4 0%, #fff 100%);
+  }
+</style>

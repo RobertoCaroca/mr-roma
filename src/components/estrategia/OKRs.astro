@@ -1,0 +1,290 @@
+---
+// OKRs Component - Step 3: Define company OKRs
+---
+
+<section class="okrs-section">
+  <div class="container">
+    <div class="content-layout">
+      <div class="question-column">
+        <div class="step-indicator">Paso 3</div>
+        <h2 class="question-title">OKRs de la empresa</h2>
+      </div>
+      
+      <div class="options-column">
+        <div class="okrs-grid">
+          <!-- OKR 1 -->
+          <div class="okr-card">
+            <div class="objective-section">
+              <div class="objective-label">Objetivo 1</div>
+              <input type="text" class="objective-input" value="Aumentar ingresos anuales en un 25%" readonly>
+            </div>
+            <div class="key-result-section">
+              <div class="key-result-label">Key result</div>
+              <input type="text" class="key-result-input" value="Alcanzar $2M en ventas para diciembre 2024" readonly>
+            </div>
+          </div>
+
+          <!-- OKR 2 -->
+          <div class="okr-card">
+            <div class="objective-section">
+              <div class="objective-label">Objetivo 2</div>
+              <input type="text" class="objective-input" value="Mejorar la satisfacción del cliente" readonly>
+            </div>
+            <div class="key-result-section">
+              <div class="key-result-label">Key result</div>
+              <input type="text" class="key-result-input" value="NPS de 8.5+ y 95% de retención" readonly>
+            </div>
+          </div>
+
+          <!-- OKR 3 -->
+          <div class="okr-card">
+            <div class="objective-section">
+              <div class="objective-label">Objetivo 3</div>
+              <input type="text" class="objective-input" value="Optimizar operaciones internas" readonly>
+            </div>
+            <div class="key-result-section">
+              <div class="key-result-label">Key result</div>
+              <input type="text" class="key-result-input" value="Reducir costos operativos en 15%" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .okrs-section {
+    padding: 1rem 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .question-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .step-indicator {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    font-style: italic;
+    margin-bottom: 0rem;
+  }
+
+  .question-title {
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .options-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .okrs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .okr-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 200px;
+    position: relative;
+  }
+
+  .objective-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .objective-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .objective-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ef1d27;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .objective-input:focus {
+    border-bottom-color: #d41e2a;
+  }
+
+  .objective-input::placeholder {
+    color: #999;
+  }
+
+  .key-result-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .key-result-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .key-result-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ef1d27;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .key-result-input:focus {
+    border-bottom-color: #d41e2a;
+  }
+
+  .key-result-input::placeholder {
+    color: #999;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1023px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .question-column {
+      align-items: center;
+      text-align: center;
+    }
+
+    .question-title {
+      text-align: center;
+    }
+
+    .okrs-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .okrs-section {
+      padding: 4rem 0;
+    }
+
+    .okrs-grid {
+      gap: 1.5rem;
+    }
+
+    .okr-card {
+      padding: 1.5rem 1rem;
+      min-height: 180px;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .okrs-section {
+      padding: 3rem 0;
+    }
+
+    .question-title {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .okr-card {
+      padding: 1rem 0.75rem;
+      min-height: 160px;
+      gap: 1.25rem;
+    }
+
+    .objective-label,
+    .key-result-label {
+      font-size: 1rem;
+    }
+
+    .objective-input,
+    .key-result-input {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const objectiveInputs = document.querySelectorAll('.objective-input');
+    const keyResultInputs = document.querySelectorAll('.key-result-input');
+    
+    // Handle objective input changes
+    objectiveInputs.forEach(input => {
+      input.addEventListener('input', function(this: HTMLInputElement) {
+        const value = this.value;
+        const okrCard = this.closest('.okr-card');
+        const objectiveLabel = okrCard?.querySelector('.objective-label')?.textContent;
+        
+        console.log(`${objectiveLabel}: ${value}`);
+      });
+    });
+
+    // Handle key result input changes
+    keyResultInputs.forEach(input => {
+      input.addEventListener('input', function(this: HTMLInputElement) {
+        const value = this.value;
+        const okrCard = this.closest('.okr-card');
+        const objectiveLabel = okrCard?.querySelector('.objective-label')?.textContent;
+        
+        console.log(`Key result for ${objectiveLabel}: ${value}`);
+      });
+    });
+  });
+</script>

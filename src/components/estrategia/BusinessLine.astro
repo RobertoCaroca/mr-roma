@@ -1,0 +1,341 @@
+---
+// Business Line Component - Step 2: Define goals by business line
+---
+
+<section class="business-line-section">
+  <div class="container">
+    <div class="content-layout">
+      <div class="question-column">
+        <div class="step-indicator">Paso 2</div>
+        <h2 class="question-title">Lineas de negocio y metas.</h2>
+      </div>
+      
+      <div class="options-column">
+        <div class="business-lines-grid">
+          <!-- Business Line 1 -->
+          <div class="business-line-group">
+            <div class="business-line-name">
+              <div class="line-label">Línea de negocio 1</div>
+              <div class="name-label">Nombre</div>
+              <input type="text" class="business-name-input" value="Ventas Online" readonly>
+            </div>
+            <div class="goals-row">
+              <div class="goal-input">
+                <label class="input-label">Meta Ingreso YoY (%)</label>
+                <input type="number" class="percentage-input" value="30" min="0" max="1000" step="0.1" readonly>
+              </div>
+              <div class="goal-input">
+                <label class="input-label">Meta Costo YoY (%)</label>
+                <input type="number" class="percentage-input" value="15" min="0" max="1000" step="0.1" readonly>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Line 2 -->
+          <div class="business-line-group">
+            <div class="business-line-name">
+              <div class="line-label">Línea de negocio 2</div>
+              <div class="name-label">Nombre</div>
+              <input type="text" class="business-name-input" value="Servicios B2B" readonly>
+            </div>
+            <div class="goals-row">
+              <div class="goal-input">
+                <label class="input-label">Meta Ingreso YoY (%)</label>
+                <input type="number" class="percentage-input" value="20" min="0" max="1000" step="0.1" readonly>
+              </div>
+              <div class="goal-input">
+                <label class="input-label">Meta Costo YoY (%)</label>
+                <input type="number" class="percentage-input" value="10" min="0" max="1000" step="0.1" readonly>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Line 3 -->
+          <div class="business-line-group">
+            <div class="business-line-name">
+              <div class="line-label">Línea de negocio 3</div>
+              <div class="name-label">Nombre</div>
+              <input type="text" class="business-name-input" value="Consultoría" readonly>
+            </div>
+            <div class="goals-row">
+              <div class="goal-input">
+                <label class="input-label">Meta Ingreso YoY (%)</label>
+                <input type="number" class="percentage-input" value="40" min="0" max="1000" step="0.1" readonly>
+              </div>
+              <div class="goal-input">
+                <label class="input-label">Meta Costo YoY (%)</label>
+                <input type="number" class="percentage-input" value="5" min="0" max="1000" step="0.1" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .business-line-section {
+    padding: 1rem 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .question-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .step-indicator {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    font-style: italic;
+    margin-bottom: 0rem;
+  }
+
+  .question-title {
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .options-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .business-lines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .business-line-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .business-line-name {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 80px;
+  }
+
+  .line-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.25rem;
+  }
+
+  .name-label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666;
+    font-style: italic;
+  }
+
+  .business-name-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ef1d27;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+    padding: 0.25rem 0;
+    margin-top: 0.25rem;
+  }
+
+  .business-name-input:focus {
+    border-bottom-color: #d41e2a;
+  }
+
+  .business-name-input::placeholder {
+    color: #999;
+  }
+
+  .goals-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .goal-input {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 60px;
+    position: relative;
+  }
+
+  .input-label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #000;
+    text-align: left;
+  }
+
+  .percentage-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ef1d27;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    width: 100%;
+    padding: 0.25rem 0;
+    margin-top: 0.25rem;
+    min-height: 2rem;
+  }
+
+  .percentage-input:focus {
+    border-bottom-color: #d41e2a;
+  }
+
+  .percentage-input::placeholder {
+    color: #999;
+    font-weight: 400;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1023px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .question-column {
+      align-items: center;
+      text-align: center;
+    }
+
+    .question-title {
+      text-align: center;
+    }
+
+    .business-lines-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .business-line-section {
+      padding: 4rem 0;
+    }
+
+    .business-lines-grid {
+      gap: 1.5rem;
+    }
+
+    .business-line-name {
+      padding: 1rem 0.75rem;
+      min-height: 70px;
+    }
+
+    .goal-input {
+      padding: 0.75rem 0.75rem;
+      min-height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .business-line-section {
+      padding: 3rem 0;
+    }
+
+    .question-title {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .business-line-name {
+      min-height: 60px;
+      padding: 0.75rem 0.5rem;
+    }
+
+    .goal-input {
+      min-height: 45px;
+      padding: 0.5rem 0.5rem;
+    }
+
+    .percentage-input {
+      font-size: 1rem;
+      min-height: 1.8rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const businessNameInputs = document.querySelectorAll('.business-name-input');
+    const percentageInputs = document.querySelectorAll('.percentage-input');
+    
+    // Handle business name input changes
+    businessNameInputs.forEach(input => {
+      input.addEventListener('input', function(this: HTMLInputElement) {
+        const value = this.value;
+        const businessLineGroup = this.closest('.business-line-group');
+        const lineLabel = businessLineGroup?.querySelector('.line-label')?.textContent;
+        
+        console.log(`Business name for ${lineLabel}: ${value}`);
+      });
+    });
+
+    // Handle percentage input changes
+    percentageInputs.forEach(input => {
+      input.addEventListener('input', function(this: HTMLInputElement) {
+        const value = this.value;
+        const goalInput = this.closest('.goal-input');
+        const goalLabel = goalInput?.querySelector('.input-label')?.textContent;
+        const businessLineGroup = goalInput?.closest('.business-line-group');
+        const lineLabel = businessLineGroup?.querySelector('.line-label')?.textContent;
+        
+        console.log(`${goalLabel} for ${lineLabel}: ${value}%`);
+      });
+    });
+  });
+</script>
