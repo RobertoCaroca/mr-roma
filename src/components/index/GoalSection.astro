@@ -4,8 +4,10 @@
 
 <section class="goal-section">
   <div class="container">
-    <h2 class="goal-title">¿Cuál es tu objetivo?</h2>
+    <div class="step-indicator">Paso 1</div>
+    <h2 class="goal-title">DEFINE TUS OBJETIVOS DE NEGOCIO</h2>
     
+    <div class="goal-layout">
     <div class="goal-options">
       <div class="goal-option">
         <div class="goal-icon">
@@ -13,23 +15,35 @@
             <path d="M3 17l4-4 4 2 6-6"/>
             <path d="M17 3l4 4-4 4"/>
             <path d="M21 7h-4"/>
+            <path d="M7 13l3 3 3-3"/>
+            <path d="M10 16V8"/>
           </svg>
         </div>
         <span class="goal-text">Meta Anual de<br>Crecimiento</span>
+          <div class="goal-hover-content">
+            <h3 class="hover-title">Meta de crecimiento</h3>
+            <p class="hover-subtitle">A donde queremos llegar</p>
+            <p class="hover-description">Meta crecimeinto de la empresa en ingresos y/o margen. El fin ultimo de una empresa es crecer ingresos y/o margen.</p>
+          </div>
       </div>
       
-      <div class="goal-option">
-        <div class="goal-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M9 12l2 2 4-4"/>
-            <path d="M12 2v4"/>
-            <path d="M12 18v4"/>
-            <path d="M2 12h4"/>
-            <path d="M18 12h4"/>
-          </svg>
-        </div>
-        <span class="goal-text">OKR<br>Empresa</span>
+         <div class="goal-option-okr-card">
+          <div class="goal-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M12 2v4"/>
+              <path d="M12 18v4"/>
+              <path d="M2 12h4"/>
+              <path d="M18 12h4"/>
+            </svg>
+          </div>
+          <span class="goal-text">OKR<br>Empresa</span>
+           <div class="goal-hover-content">
+             <h3 class="hover-title">OKRs</h3>
+             <p class="hover-subtitle">Como lo lograremos</p>
+             <p class="hover-description">Objetivos e indicadores que se deben cumplir para alcanzar la meta de crecimiento de la empresa.</p>
+           </div>
       </div>
       
       <div class="goal-option">
@@ -39,24 +53,131 @@
           </svg>
         </div>
         <span class="goal-text">North<br>Star</span>
-      </div>
-      
-      <div class="goal-option-main">
-        <div class="goal-main-content">
-          <p class="goal-main-text">
-            Todo los caminos llegan a Roma, lo importante es Alinear a tus equipos hacia tu objetivo.
-          </p>
-          <div class="goal-eval-button">
-            <span class="eval-text"> Alinear Equipos -> </span>
+          <div class="goal-hover-content">
+            <h3 class="hover-title">North</h3>
+            <p class="hover-subtitle">Como medimos que vamos bien.</p>
+            <p class="hover-description">Principal metrica operativa que impulsa el crecimiento del negocio. pro ejemplo: Airbnb, noches reservadas; Spotify: Minutos reproducidos; E-commerce, pedidos entregados.</p>
           </div>
         </div>
+      </div>
+      
+      <div class="goal-content">
+          <p class="goal-main-text">
+            Guia el desarrollo tecnologcio de tu empresa hacia tu objetivo. Define que es "Roma" y comencemos a avanzar!
+          </p>
       </div>
     </div>
     <div class="goal-footer">
       <p class="goal-footer-text">
-        ¿Aún no defines tu objetivo, tu Roma, con negocio? 
-        <a href="#goal-evaluation" class="goal-footer-link">Haz clic aquí</a>
+        ¿Necesitas ayuda para definir o validar tu objetivo, tu Roma? Selecciona tu industria para obtener tu OKR, North Star, con AI.
       </p>
+    </div>
+    
+    <div class="industry-section">
+      <div class="industry-grid">
+        <button class="industry-btn" data-industry="fintech">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+              <line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <span class="industry-text">Fintech</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="ecommerce">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+          </div>
+          <span class="industry-text">E-commerce</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="logistica">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16,8 20,8 23,11 23,16 16,16"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <span class="industry-text">Logística</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="automotriz">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17h.01M17 17h.01M3 12h18l-1.5-6H4.5L3 12zM3 12v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6"/>
+              <path d="M6 8V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4"/>
+            </svg>
+          </div>
+          <span class="industry-text">Automotriz</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="edtech">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <span class="industry-text">EdTech</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="proptech">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <span class="industry-text">PropTech</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="agtech">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="industry-text">AgTech</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="insurtech">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="industry-text">InsurTech</span>
+        </button>
+        
+        <button class="industry-btn" data-industry="healthtech">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <span class="industry-text">HealthTech</span>
+        </button>
+        
+        <button class="industry-btn industry-btn-add" data-industry="custom">
+          <div class="add-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </div>
+          <span class="industry-text">Añade tu industria</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -81,6 +202,16 @@
     }
   }
 
+  .step-indicator {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ef1d27;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
   .goal-title {
     font-size: clamp(5rem, 4vw, 3.5rem);
     font-weight: 900;
@@ -91,47 +222,152 @@
     line-height: 1.1;
   }
 
-  .goal-options {
+  .goal-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 2rem;
-    align-items: stretch;
+    align-items: start;
+  }
+
+  .goal-options {
+    grid-column: span 6;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
   }
 
   .goal-option {
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 24px;
-    padding: 2rem 1.5rem;
+    grid-column: span 2;
+  }
+
+  .goal-content {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .goal-option {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background: #ef1d27;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    min-height: 120px;
-    transition: all 0.3s ease;
-    position: relative;
-    will-change: transform;
-    backface-visibility: hidden;
-    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 2rem 1rem;
   }
 
-  .goal-option:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  .goal-option::before,
+  .goal-option::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #d41e2a;
+    transition: all 0.5s;
+  }
+
+  .goal-option::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+  }
+
+  .goal-option::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 15px;
+  }
+
+  .goal-option:hover::before,
+  .goal-option:hover::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+  }
+
+
+  .goal-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #d41e2a;
+    color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    z-index: 3;
+  }
+
+  .goal-option:hover .goal-hover-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hover-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #fff;
+  }
+
+  .hover-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #fff;
+    opacity: 0.9;
+  }
+
+  .hover-description {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+    line-height: 1.4;
+    opacity: 0.9;
   }
 
   .goal-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-bottom: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .goal-icon svg {
     width: 100%;
     height: 100%;
-    stroke: #000;
+    stroke: #fff;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     transition: stroke 0.3s ease;
   }
 
@@ -140,79 +376,33 @@
   }
 
   .goal-option:hover .goal-icon svg {
-    stroke: #ef1d27;
+    stroke: #fff;
   }
 
   .goal-text {
-    font-size: clamp(2rem, 2vw, 1.2rem);
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #ef1d27;
+    color: #fff;
     line-height: 1.3;
-  }
-
-  .goal-option-main {
-    grid-column: span 1;
-    position: relative;
-  }
-
-  .goal-option-main::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 12px solid #fff;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    z-index: 2;
-  }
-
-  .goal-main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    width: 100%;
-    gap: 1.5rem;
-    padding-left: 2rem;
-  }
-
-  .goal-main-text {
-    font-size: clamp(2rem, 1.8vw, 1.1rem);
-    font-weight: 400;
-    color: #000;
-    line-height: 1.4;
-    margin-bottom: 4rem;
-  }
-
-  .goal-eval-button {
-    width: 100%;
-    background: linear-gradient(135deg, #ef1d27, #f26168);
-    border: 1px solid #ef1d27;
-    border-radius: 100px;
-    padding: 0.75rem 1.5rem;
+    text-align: center;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(248, 6, 6, 0.1);
-    align-self: flex-start;
+    z-index: 2;
   }
 
-  .goal-eval-button:hover {
-    background: #d41e2a;
-    transform: scale(1.05);
+
+  .goal-main-text {
+    font-size: clamp(2rem, 2vw, 1.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: #000;
+    line-height: 1.4;
+    margin: 0;
+    text-align: left;
   }
 
-  .eval-text {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-  }
 
   .goal-section .container {
     position: relative;
@@ -227,35 +417,153 @@
 
   .goal-footer-text {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: 300;
-    color: #666;
+    font-weight: 400;
+    color: #000;
     line-height: 1.4;
     margin: 0;
-    font-style: italic;
   }
 
-  .goal-footer-link {
-    color: #000;
-    font-weight: 700;
-    text-decoration: none;
-    font-style: normal;
-    transition: color 0.3s ease;
+
+  .industry-section {
+    margin-top: 3rem;
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .industry-btn {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 24px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 120px;
+    transition: all 0.3s ease;
+    position: relative;
+    will-change: transform;
+    backface-visibility: hidden;
     cursor: pointer;
+    gap: 0.75rem;
   }
 
-  .goal-footer-link:hover {
+  .industry-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .industry-btn:active {
+    transform: translateY(0);
+  }
+
+  .industry-btn.selected {
+    background: #ef1d27;
+    border-color: #ef1d27;
+    color: #fff;
+  }
+
+  .industry-btn.selected .industry-text {
+    color: #fff;
+  }
+
+  .industry-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .industry-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #000;
+    transition: stroke 0.3s ease;
+  }
+
+  .industry-btn:hover .industry-icon {
+    transform: scale(1.1);
+  }
+
+  .industry-btn:hover .industry-icon svg {
+    stroke: #ef1d27;
+  }
+
+  .industry-btn.selected .industry-icon svg {
+    stroke: #fff;
+  }
+
+  .industry-text {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 600;
     color: #ef1d27;
+    line-height: 1.3;
+  }
+
+  .industry-btn-add {
+    background: #333;
+    border-color: #333;
+    color: #fff;
+  }
+
+  .industry-btn-add:hover {
+    background: #555;
+    border-color: #555;
+  }
+
+  .industry-btn-add .industry-text {
+    color: #fff;
+  }
+
+  .add-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .add-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #fff;
+    stroke-width: 2.5;
   }
 
   /* Responsive Design */
   @media (max-width: 1023px) {
-    .goal-options {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+    .goal-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
 
-    .goal-option-main {
+    .goal-options {
+      grid-column: span 1;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+
+    .goal-option {
       grid-column: span 2;
+    }
+
+    .goal-content {
+      grid-column: span 1;
+      align-items: center;
+      text-align: center;
+    }
+
+    .goal-main-text {
+      text-align: center;
+    }
+
+    .industry-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
     }
   }
 
@@ -265,21 +573,84 @@
     }
 
     .goal-options {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(6, 1fr);
       gap: 1rem;
-    }
-
-    .goal-option-main {
-      grid-column: span 1;
+      justify-items: center;
     }
 
     .goal-option {
-      min-height: 100px;
-      padding: 1.5rem 1rem;
+      grid-column: span 2;
     }
 
-    .goal-main-content {
+    .goal-option {
+      width: 100%;
+      aspect-ratio: 1;
+      padding: 1rem;
+    }
+
+    .goal-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .goal-text {
+      font-size: 1rem;
+    }
+
+    .goal-option {
+      border-radius: 12px;
+    }
+
+    .goal-option::before {
+      border-radius: 0 12px 0 100%;
+    }
+
+    .goal-option::after {
+      border-radius: 0 100% 0 12px;
+    }
+
+    .goal-option:hover::before,
+    .goal-option:hover::after {
+      border-radius: 12px;
+    }
+
+    .goal-option-okr::before {
+      border-radius: 0 100% 0 12px;
+    }
+
+    .goal-option-okr::after {
+      border-radius: 0 12px 0 100%;
+    }
+
+    .goal-hover-content {
+      padding: 1rem;
+    }
+
+    .hover-title {
+      font-size: 1rem;
+    }
+
+    .hover-subtitle {
+      font-size: 0.8rem;
+    }
+
+    .hover-description {
+      font-size: 0.7rem;
+    }
+
+    .goal-content {
+      gap: 1.5rem;
+    }
+
+    .industry-grid {
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
+    }
+
+    .industry-btn {
+      min-height: 100px;
+      padding: 1.5rem 1rem;
     }
   }
 
@@ -288,14 +659,71 @@
       padding: 3rem 0;
     }
 
+    .step-indicator {
+      text-align: center;
+    }
+
     .goal-title {
       font-size: clamp(1.5rem, 5vw, 2.5rem);
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     .goal-option {
-      min-height: 80px;
-      padding: 1rem 0.75rem;
+      width: 100%;
+      aspect-ratio: 1;
+      padding: 0.75rem;
+    }
+
+    .goal-icon {
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .goal-text {
+      font-size: 0.9rem;
+    }
+
+    .goal-option {
+      border-radius: 10px;
+    }
+
+    .goal-option::before {
+      border-radius: 0 10px 0 100%;
+    }
+
+    .goal-option::after {
+      border-radius: 0 100% 0 10px;
+    }
+
+    .goal-option:hover::before,
+    .goal-option:hover::after {
+      border-radius: 10px;
+    }
+
+    .goal-option-okr::before {
+      border-radius: 0 100% 0 12px;
+    }
+
+    .goal-option-okr::after {
+      border-radius: 0 12px 0 100%;
+    }
+
+    .goal-hover-content {
+      padding: 0.75rem;
+    }
+
+    .hover-title {
+      font-size: 0.9rem;
+    }
+
+    .hover-subtitle {
+      font-size: 0.7rem;
+    }
+
+    .hover-description {
+      font-size: 0.65rem;
     }
 
     .goal-main-text {
@@ -305,18 +733,162 @@
     .eval-text {
       font-size: 0.9rem;
     }
+
+    .industry-btn {
+      min-height: 80px;
+      padding: 1rem 0.75rem;
+    }
+
+    .industry-text {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+  }
+
+  /* OKR Card - Completely separate implementation */
+  .goal-option-okr-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background: #ef1d27;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    grid-column: span 2;
+    padding: 2rem 1rem;
+  }
+
+  .goal-option-okr-card::before,
+  .goal-option-okr-card::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #d41e2a;
+    transition: all 0.5s;
+  }
+
+  .goal-option-okr-card::before {
+    top: 0;
+    left: 0;
+    border-radius: 0 0 100% 0;
+  }
+
+  .goal-option-okr-card::after {
+    bottom: 0;
+    right: 0;
+    border-radius: 100% 0 0 0;
+  }
+
+  .goal-option-okr-card:hover::before,
+  .goal-option-okr-card:hover::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+  }
+
+  .goal-option-okr-card .goal-icon {
+    z-index: 2;
+    color: #fff;
+    margin-bottom: 1rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .goal-option-okr-card .goal-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #fff;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: stroke 0.3s ease;
+  }
+
+  .goal-option-okr-card .goal-text {
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .goal-option-okr-card .goal-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #d41e2a;
+    color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    z-index: 3;
+  }
+
+  .goal-option-okr-card:hover .goal-hover-content {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const evalButton = document.querySelector('.goal-eval-button');
+    // Industry selection functionality
+    const industryButtons = document.querySelectorAll('.industry-btn');
     
-    if (evalButton) {
-      evalButton.addEventListener('click', () => {
-        // Navigate to evaluation page
-        window.location.href = '/estrategia';
+    industryButtons.forEach(button => {
+      button.addEventListener('click', function(this: HTMLButtonElement) {
+        // Remove selected class from all buttons
+        industryButtons.forEach(btn => btn.classList.remove('selected'));
+        
+        // Add selected class to clicked button
+        this.classList.add('selected');
+        
+        // Get the industry value
+        const industry = this.getAttribute('data-industry');
+        
+        // Handle custom industry addition
+        if (industry === 'custom') {
+          const customIndustry = prompt('Ingresa el nombre de tu industria:');
+          if (customIndustry && customIndustry.trim()) {
+            const textElement = this.querySelector('.industry-text');
+            if (textElement) {
+              textElement.textContent = customIndustry.trim();
+            }
+            this.setAttribute('data-industry', customIndustry.toLowerCase().replace(/\s+/g, '-'));
+          }
+          return;
+        }
+        
+        // Log selection for debugging
+        console.log('Selected industry:', industry);
+        
+        // Here you can add logic to proceed to next step
+        // For example: window.location.href = `/evaluation?industry=${industry}`;
       });
-    }
+    });
   });
 </script>
