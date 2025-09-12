@@ -273,14 +273,20 @@
         
         console.log(`Copy link clicked for: ${cardTitle}`);
         
-        // Generate the estrategia-empresa URL
+        // Determine the target URL based on the button clicked
         const baseUrl = window.location.origin;
-        const estrategiaEmpresaUrl = `${baseUrl}/estrategia-empresa`;
+        let targetUrl = '';
+        
+        if (cardTitle === 'Solicitar') {
+          targetUrl = `${baseUrl}/estrategia-equipo`;
+        } else {
+          targetUrl = `${baseUrl}/estrategia-empresa`;
+        }
         
         // Copy the link to clipboard
         if (navigator.clipboard) {
-          navigator.clipboard.writeText(estrategiaEmpresaUrl).then(() => {
-            console.log('Estrategia empresa link copied to clipboard');
+          navigator.clipboard.writeText(targetUrl).then(() => {
+            console.log(`${cardTitle} link copied to clipboard`);
             
             // Show a brief success message
             const originalText = this.querySelector('.button-text')?.textContent;
@@ -292,19 +298,19 @@
               }, 2000);
             }
             
-            // Redirect to estrategia-empresa page after a short delay
+            // Redirect to target page after a short delay
             setTimeout(() => {
-              window.location.href = estrategiaEmpresaUrl;
+              window.location.href = targetUrl;
             }, 1000);
           }).catch(err => {
             console.error('Failed to copy link:', err);
             // Fallback: redirect directly
-            window.location.href = estrategiaEmpresaUrl;
+            window.location.href = targetUrl;
           });
         } else {
           // Fallback for browsers that don't support clipboard API
           console.log('Clipboard API not supported, redirecting directly');
-          window.location.href = estrategiaEmpresaUrl;
+          window.location.href = targetUrl;
         }
       });
     });

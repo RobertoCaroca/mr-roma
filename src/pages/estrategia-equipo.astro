@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StrategyHeader from '../components/estrategia/StrategyHeader.astro';
+import BusinessGoal from '../components/estrategia/BusinessGoal.astro';
+import BusinessLine from '../components/estrategia/BusinessLine.astro';
+import OKRs from '../components/estrategia/OKRs.astro';
+import TeamGoals from '../components/estrategia/TeamGoals.astro';
+---
+
+<Layout title="Estrategia Equipo - MR Roma">
+  <main class="estrategia-equipo-main">
+    <StrategyHeader />
+    <BusinessGoal />
+    <BusinessLine />
+    <OKRs />
+    <TeamGoals />
+  </main>
+</Layout>
+
+<style>
+  .estrategia-equipo-main {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    min-height: 100vh;
+  }
+  
+  /* Enhanced section spacing */
+  .estrategia-equipo-main section {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* Add subtle background patterns for different sections */
+  .estrategia-equipo-main .strategy-header {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  }
+  
+  .estrategia-equipo-main .business-goal-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  }
+  
+  .estrategia-equipo-main .business-line-section {
+    background: linear-gradient(135deg, #fff 0%, #f1f3f4 100%);
+  }
+  
+  .estrategia-equipo-main .okrs-section {
+    background: linear-gradient(135deg, #f1f3f4 0%, #fff 100%);
+  }
+  
+  .estrategia-equipo-main .team-goals-section {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-top: 3px solid #ef1d27;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  
+  /* Add visual separator between company and team sections */
+  .estrategia-equipo-main .team-goals-section::before {
+    content: 'OKRs del Equipo';
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ef1d27;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    background: linear-gradient(135deg, #ef1d27 0%, #d41e2a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Enhanced input styling for better presentation */
+  .estrategia-equipo-main input {
+    background: #f8f9fa !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    color: #495057 !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .estrategia-equipo-main input::placeholder {
+    color: #6c757d !important;
+    font-style: italic !important;
+  }
+  
+  /* Style buttons to look like informational badges */
+  .estrategia-equipo-main button {
+    background: linear-gradient(135deg, #ef1d27 0%, #d41e2a 100%) !important;
+    border: none !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(239, 29, 39, 0.3) !important;
+    transform: none !important;
+  }
+  
+  /* Enhanced goal selections styling */
+  .estrategia-equipo-main .goal-selection {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%) !important;
+    border: 3px solid #ef1d27 !important;
+    opacity: 1 !important;
+    box-shadow: 0 8px 25px rgba(239, 29, 39, 0.2) !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  .estrategia-equipo-main .goal-text {
+    color: #ef1d27 !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Enhanced card styling */
+  .estrategia-equipo-main .align-card,
+  .estrategia-equipo-main .okr-card,
+  .estrategia-equipo-main .business-line-group {
+    background: #fff !important;
+    border: 2px solid #e9ecef !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transform: none !important;
+  }
+  
+  /* Add sample data styling */
+  .estrategia-equipo-main .percentage-input {
+    background: #e8f5e8 !important;
+    color: #155724 !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+  }
+  
+  .estrategia-equipo-main .business-name-input {
+    background: #fff3cd !important;
+    color: #856404 !important;
+    font-weight: 600 !important;
+  }
+  
+  .estrategia-equipo-main .objective-input,
+  .estrategia-equipo-main .key-result-input {
+    background: #d1ecf1 !important;
+    color: #0c5460 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* Remove number input arrows */
+  .estrategia-equipo-main input[type="number"]::-webkit-outer-spin-button,
+  .estrategia-equipo-main input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+  }
+  
+  .estrategia-equipo-main input[type="number"] {
+    -moz-appearance: textfield !important;
+  }
+  
+  /* Team goals specific styling */
+  .estrategia-equipo-main .team-okr-card {
+    background: #fff !important;
+    border: 2px solid #e9ecef !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .estrategia-equipo-main .team-okr-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    border-color: #ef1d27 !important;
+  }
+  
+  .estrategia-equipo-main .add-okr-card {
+    background: #f8f9fa !important;
+    border: 2px dashed #ef1d27 !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .estrategia-equipo-main .add-okr-card:hover {
+    background: #fff !important;
+    border-color: #d41e2a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(239, 29, 39, 0.2) !important;
+  }
+  
+  .estrategia-equipo-main .company-okr-select {
+    background: #fff !important;
+    border: 2px solid #e9ecef !important;
+    color: #495057 !important;
+    font-weight: 500 !important;
+  }
+  
+  .estrategia-equipo-main .company-okr-select:focus {
+    border-color: #ef1d27 !important;
+    box-shadow: 0 0 0 3px rgba(239, 29, 39, 0.1) !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1023px) {
+    .estrategia-equipo-main .team-goals-section::before {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .estrategia-equipo-main .team-goals-section::before {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>

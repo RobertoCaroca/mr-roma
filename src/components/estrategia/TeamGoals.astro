@@ -1,0 +1,435 @@
+---
+// Team Goals Component - Step 4: Team OKRs aligned with company OKRs
+---
+
+<section class="team-goals-section">
+  <div class="container">
+    <div class="content-layout">
+      <div class="question-column">
+        <div class="step-indicator">Paso 4</div>
+        <h2 class="question-title">OKRs de tu equipo</h2>
+      </div>
+      
+      <div class="options-column">
+        <div class="team-okrs-grid">
+          <!-- OKR 1 -->
+          <div class="team-okr-card">
+            <div class="objective-section">
+              <div class="objective-label">Objetivo 1</div>
+              <input type="text" class="objective-input" placeholder="Ingresa el objetivo de tu equipo" value="Aumentar la productividad del equipo en 30%">
+            </div>
+            <div class="key-result-section">
+              <div class="key-result-label">Key result</div>
+              <input type="text" class="key-result-input" placeholder="Ingresa el key result" value="Implementar 5 nuevas herramientas de automatización">
+            </div>
+            <div class="company-okr-section">
+              <div class="company-okr-label">OKR empresa asociado</div>
+              <select class="company-okr-select">
+                <option value="">Selecciona un OKR de la empresa</option>
+                <option value="okr1" selected>Aumentar ingresos anuales en un 25%</option>
+                <option value="okr2">Mejorar la satisfacción del cliente</option>
+                <option value="okr3">Optimizar operaciones internas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- OKR 2 -->
+          <div class="team-okr-card">
+            <div class="objective-section">
+              <div class="objective-label">Objetivo 2</div>
+              <input type="text" class="objective-input" placeholder="Ingresa el objetivo de tu equipo" value="Mejorar la calidad del código">
+            </div>
+            <div class="key-result-section">
+              <div class="key-result-label">Key result</div>
+              <input type="text" class="key-result-input" placeholder="Ingresa el key result" value="Reducir bugs en producción en 50%">
+            </div>
+            <div class="company-okr-section">
+              <div class="company-okr-label">OKR empresa asociado</div>
+              <select class="company-okr-select">
+                <option value="">Selecciona un OKR de la empresa</option>
+                <option value="okr1">Aumentar ingresos anuales en un 25%</option>
+                <option value="okr2" selected>Mejorar la satisfacción del cliente</option>
+                <option value="okr3">Optimizar operaciones internas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- OKR 3 -->
+          <div class="team-okr-card">
+            <div class="objective-section">
+              <div class="objective-label">Objetivo 3</div>
+              <input type="text" class="objective-input" placeholder="Ingresa el objetivo de tu equipo" value="Optimizar procesos de desarrollo">
+            </div>
+            <div class="key-result-section">
+              <div class="key-result-label">Key result</div>
+              <input type="text" class="key-result-input" placeholder="Ingresa el key result" value="Reducir tiempo de deployment en 40%">
+            </div>
+            <div class="company-okr-section">
+              <div class="company-okr-label">OKR empresa asociado</div>
+              <select class="company-okr-select">
+                <option value="">Selecciona un OKR de la empresa</option>
+                <option value="okr1">Aumentar ingresos anuales en un 25%</option>
+                <option value="okr2">Mejorar la satisfacción del cliente</option>
+                <option value="okr3" selected>Optimizar operaciones internas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Add OKR Button -->
+          <div class="add-okr-card" id="addOkrCard">
+            <div class="add-okr-content">
+              <div class="add-icon">+</div>
+              <div class="add-text">Agregar OKR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-goals-section {
+    padding: 1rem 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .question-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .step-indicator {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+    font-style: italic;
+    margin-bottom: 0rem;
+  }
+
+  .question-title {
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .options-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-okrs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .team-okr-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 280px;
+    position: relative;
+  }
+
+  .objective-section,
+  .key-result-section,
+  .company-okr-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .objective-label,
+  .key-result-label,
+  .company-okr-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .objective-input,
+  .key-result-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ef1d27;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .objective-input:focus,
+  .key-result-input:focus {
+    border-bottom-color: #d41e2a;
+  }
+
+  .objective-input::placeholder,
+  .key-result-input::placeholder {
+    color: #999;
+  }
+
+  .company-okr-select {
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #000;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .company-okr-select:focus {
+    border-color: #ef1d27;
+    box-shadow: 0 0 0 2px rgba(239, 29, 39, 0.1);
+  }
+
+  .add-okr-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-style: dashed;
+  }
+
+  .add-okr-card:hover {
+    border-color: #ef1d27;
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 29, 39, 0.1);
+  }
+
+  .add-okr-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .add-icon {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #000;
+    line-height: 1;
+  }
+
+  .add-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+  }
+
+  .add-okr-card:hover .add-icon,
+  .add-okr-card:hover .add-text {
+    color: #ef1d27;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1023px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .question-column {
+      align-items: center;
+      text-align: center;
+    }
+
+    .question-title {
+      text-align: center;
+    }
+
+    .team-okrs-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .team-goals-section {
+      padding: 4rem 0;
+    }
+
+    .team-okrs-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .team-okr-card {
+      padding: 1.5rem 1rem;
+      min-height: 250px;
+      gap: 1.25rem;
+    }
+
+    .add-okr-card {
+      padding: 1.5rem 1rem;
+      min-height: 250px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-goals-section {
+      padding: 3rem 0;
+    }
+
+    .question-title {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .team-okr-card {
+      padding: 1.25rem 0.75rem;
+      min-height: 220px;
+      gap: 1rem;
+    }
+
+    .add-okr-card {
+      padding: 1.25rem 0.75rem;
+      min-height: 220px;
+    }
+
+    .objective-label,
+    .key-result-label,
+    .company-okr-label {
+      font-size: 0.9rem;
+    }
+
+    .objective-input,
+    .key-result-input {
+      font-size: 0.85rem;
+    }
+
+    .company-okr-select {
+      font-size: 0.85rem;
+      padding: 0.6rem;
+    }
+
+    .add-icon {
+      font-size: 2.5rem;
+    }
+
+    .add-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const addOkrCard = document.getElementById('addOkrCard');
+    const teamOkrsGrid = document.querySelector('.team-okrs-grid');
+    let okrCounter = 3; // Starting from 4 since we have 3 existing OKRs
+
+    // Handle add OKR button click
+    addOkrCard?.addEventListener('click', () => {
+      okrCounter++;
+      
+      // Create new OKR card
+      const newOkrCard = document.createElement('div');
+      newOkrCard.className = 'team-okr-card';
+      newOkrCard.innerHTML = `
+        <div class="objective-section">
+          <div class="objective-label">Objetivo ${okrCounter}</div>
+          <input type="text" class="objective-input" placeholder="Ingresa el objetivo de tu equipo">
+        </div>
+        <div class="key-result-section">
+          <div class="key-result-label">Key result</div>
+          <input type="text" class="key-result-input" placeholder="Ingresa el key result">
+        </div>
+        <div class="company-okr-section">
+          <div class="company-okr-label">OKR empresa asociado</div>
+          <select class="company-okr-select">
+            <option value="">Selecciona un OKR de la empresa</option>
+            <option value="okr1">Aumentar ingresos anuales en un 25%</option>
+            <option value="okr2">Mejorar la satisfacción del cliente</option>
+            <option value="okr3">Optimizar operaciones internas</option>
+          </select>
+        </div>
+      `;
+
+      // Insert before the add button
+      teamOkrsGrid?.insertBefore(newOkrCard, addOkrCard);
+
+      // Add event listeners to new inputs
+      addEventListenersToOkrCard(newOkrCard);
+
+      // Scroll to the new card
+      newOkrCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Focus on the first input
+      const firstInput = newOkrCard.querySelector('.objective-input') as HTMLInputElement;
+      firstInput?.focus();
+    });
+
+    // Add event listeners to existing OKR cards
+    const existingOkrCards = document.querySelectorAll('.team-okr-card');
+    existingOkrCards.forEach(card => {
+      addEventListenersToOkrCard(card);
+    });
+
+    function addEventListenersToOkrCard(card: Element) {
+      const objectiveInput = card.querySelector('.objective-input') as HTMLInputElement;
+      const keyResultInput = card.querySelector('.key-result-input') as HTMLInputElement;
+      const companyOkrSelect = card.querySelector('.company-okr-select') as HTMLSelectElement;
+
+      objectiveInput?.addEventListener('input', function(this: HTMLInputElement) {
+        console.log(`Objective ${okrCounter}: ${this.value}`);
+      });
+
+      keyResultInput?.addEventListener('input', function(this: HTMLInputElement) {
+        console.log(`Key result ${okrCounter}: ${this.value}`);
+      });
+
+      companyOkrSelect?.addEventListener('change', function(this: HTMLSelectElement) {
+        console.log(`Company OKR ${okrCounter}: ${this.value}`);
+      });
+    }
+  });
+</script>
